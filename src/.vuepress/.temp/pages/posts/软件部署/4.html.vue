@@ -1,0 +1,30 @@
+<template><div><h1 id="mysql数据备份" tabindex="-1"><a class="header-anchor" href="#mysql数据备份" aria-hidden="true">#</a> MySQL数据备份</h1>
+<h2 id="一、安装cron" tabindex="-1"><a class="header-anchor" href="#一、安装cron" aria-hidden="true">#</a> 一、安装cron</h2>
+<h4 id="_1、检查-cron-服务状态" tabindex="-1"><a class="header-anchor" href="#_1、检查-cron-服务状态" aria-hidden="true">#</a> 1、检查 <code v-pre>cron</code> 服务状态</h4>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code>systemctl status <span class="token function">cron</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="_2、启动服务" tabindex="-1"><a class="header-anchor" href="#_2、启动服务" aria-hidden="true">#</a> 2、启动服务</h3>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> systemctl start <span class="token function">cron</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="_3、安装" tabindex="-1"><a class="header-anchor" href="#_3、安装" aria-hidden="true">#</a> 3、安装</h3>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">apt</span> update
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">cron</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_4、检查用户权限" tabindex="-1"><a class="header-anchor" href="#_4、检查用户权限" aria-hidden="true">#</a> 4、检查用户权限</h3>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">crontab</span> <span class="token parameter variable">-e</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="_5、添加到crontab表里面-设置4天删一次历史数据" tabindex="-1"><a class="header-anchor" href="#_5、添加到crontab表里面-设置4天删一次历史数据" aria-hidden="true">#</a> 5、添加到crontab表里面，设置4天删一次历史数据</h3>
+<div class="language-mysql line-numbers-mode" data-ext="mysql"><pre v-pre class="language-mysql"><code>0 1 * * * find /home/mes/backup/directory/ -name &quot;backup_*.sql&quot; -type f -mtime +4 -exec rm {} \;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="_6、数据库2个小时备份一次" tabindex="-1"><a class="header-anchor" href="#_6、数据库2个小时备份一次" aria-hidden="true">#</a> 6、数据库2个小时备份一次</h3>
+<div class="language-mysql line-numbers-mode" data-ext="mysql"><pre v-pre class="language-mysql"><code>0 */2 * * * docker run --rm --network=mydata_default -v /host/backup/directory:/container/backup/directory mysql sh -c 'exec mysqldump -h &quot;mysql8&quot; -P 3306 -u root -p&quot;62352744aa??aa&quot; ruoyipro' &gt; /home/mes/backup/directory/backup_$(date +\%Y\%m\%d\%H\%M).sql
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="二、数据还原" tabindex="-1"><a class="header-anchor" href="#二、数据还原" aria-hidden="true">#</a> 二、数据还原</h2>
+<h3 id="_1、将备份文件复制到要还原的mysql服务器或容器上。您可以使用-scp-或-docker-cp-等方法将备份文件从本地计算机复制到服务器或容器中" tabindex="-1"><a class="header-anchor" href="#_1、将备份文件复制到要还原的mysql服务器或容器上。您可以使用-scp-或-docker-cp-等方法将备份文件从本地计算机复制到服务器或容器中" aria-hidden="true">#</a> 1、将备份文件复制到要还原的MySQL服务器或容器上。您可以使用 <code v-pre>scp</code> 或 <code v-pre>docker cp</code> 等方法将备份文件从本地计算机复制到服务器或容器中</h3>
+<h3 id="_2、登录到mysql服务器或容器。您可以使用以下命令进入mysql容器-如果您在本地服务器上运行mysql-只需登录到该服务器即可" tabindex="-1"><a class="header-anchor" href="#_2、登录到mysql服务器或容器。您可以使用以下命令进入mysql容器-如果您在本地服务器上运行mysql-只需登录到该服务器即可" aria-hidden="true">#</a> 2、登录到MySQL服务器或容器。您可以使用以下命令进入MySQL容器，如果您在本地服务器上运行MySQL，只需登录到该服务器即可</h3>
+<div class="language-mysql line-numbers-mode" data-ext="mysql"><pre v-pre class="language-mysql"><code>docker exec -it mysql8 mysql -u root -p
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="_3、在mysql中创建一个新的数据库-如果还原的数据库不存在的话。例如-如果要还原到名为-mydatabase-的数据库-可以使用以下命令" tabindex="-1"><a class="header-anchor" href="#_3、在mysql中创建一个新的数据库-如果还原的数据库不存在的话。例如-如果要还原到名为-mydatabase-的数据库-可以使用以下命令" aria-hidden="true">#</a> 3、在MySQL中创建一个新的数据库，如果还原的数据库不存在的话。例如，如果要还原到名为 <code v-pre>mydatabase</code> 的数据库，可以使用以下命令</h3>
+<div class="language-mysql line-numbers-mode" data-ext="mysql"><pre v-pre class="language-mysql"><code>CREATE DATABASE mydatabase;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="_4、退出mysql命令行工具" tabindex="-1"><a class="header-anchor" href="#_4、退出mysql命令行工具" aria-hidden="true">#</a> 4、退出MySQL命令行工具</h3>
+<h3 id="_5、使用-mysql-命令还原备份文件到新创建的数据库。假设您的备份文件名为-backup-sql-要还原到-mydatabase-数据库-可以运行以下命令" tabindex="-1"><a class="header-anchor" href="#_5、使用-mysql-命令还原备份文件到新创建的数据库。假设您的备份文件名为-backup-sql-要还原到-mydatabase-数据库-可以运行以下命令" aria-hidden="true">#</a> 5、使用 <code v-pre>mysql</code> 命令还原备份文件到新创建的数据库。假设您的备份文件名为 <code v-pre>backup.sql</code>，要还原到 <code v-pre>mydatabase</code> 数据库，可以运行以下命令：</h3>
+<div class="language-mysql line-numbers-mode" data-ext="mysql"><pre v-pre class="language-mysql"><code>mysql -u root -p mydatabase &lt; backup.sql
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>系统将要求您输入MySQL的root密码，然后将备份文件还原到指定的数据库</p>
+<h3 id="_6、以上是直接操作linux完成的-可以用数据库工具连接导入" tabindex="-1"><a class="header-anchor" href="#_6、以上是直接操作linux完成的-可以用数据库工具连接导入" aria-hidden="true">#</a> 6、以上是直接操作Linux完成的，可以用数据库工具连接导入</h3>
+</div></template>
+
+
