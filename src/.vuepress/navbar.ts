@@ -13,25 +13,25 @@ export default navbar([
         icon: "pen-to-square",
         prefix: "运维/",
         children: [
-          { 
+          {
             text: "Linux-LVM 磁盘扩容",
-            icon: "pen-to-square", 
-            link: "1" 
-          },
-          { 
-            text: "Ubuntu防火墙设置", 
-            icon: "pen-to-square", 
-            link: "2" 
+            icon: "pen-to-square",
+            link: "1"
           },
           {
-            text: "minio文件服务器", 
-            icon: "pen-to-square", 
-            link: 
-            "3"
+            text: "Ubuntu防火墙设置",
+            icon: "pen-to-square",
+            link: "2"
           },
           {
-            text: "Linux自动备份", 
-            icon: "pen-to-square", 
+            text: "minio文件服务器",
+            icon: "pen-to-square",
+            link:
+              "3"
+          },
+          {
+            text: "Linux自动备份",
+            icon: "pen-to-square",
             link: "4"
           },
         ],
@@ -74,6 +74,25 @@ export default navbar([
       "tomato",
       "strawberry",
     ],
+  },
+  {
+    text: "后端文档",
+    icon: "pen-to-square",
+    prefix: "/demo/",
+    children: [
+      {
+        text: "java",
+        icon: "pen-to-square",
+        prefix: "java/",
+        children: [
+          {
+            text: "SpringBoot上传文件到minio服务器",
+            icon: "pen-to-square",
+            link: "disable"
+          },
+        ]
+      },
+    ]
   },
   // {
   //   text: "V2 文档",
