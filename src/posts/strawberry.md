@@ -1,15 +1,18 @@
 ---
 icon: pen-to-square
 date: 2022-01-11
+cover: /assets/images/22.jpg
 category:
-  - 水果
-  - 草莓
+  - Jenkins
+  - git
 tag:
-  - 红
-  - 小
+  - gitlab
+  - linux
+  - SonarQube
+  - Harbor
 ---
 
-# 草莓
+# DevOps自动化部署
 
 ## 标题 2
 
