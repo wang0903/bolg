@@ -1,71 +1,128 @@
-<template><div><p><code v-pre>more</code> 注释之前的内容被视为文章摘要。</p>
-<!-- more -->
-<h2 id="页面标题" tabindex="-1"><a class="header-anchor" href="#页面标题" aria-hidden="true">#</a> 页面标题</h2>
-<p>The first H1 title in Markdown will be regarded as page title.</p>
-<p>Markdown 中的第一个 H1 标题会被视为页面标题。</p>
-<p>你可以在 Markdown 的 Frontmatter 中设置页面标题。</p>
-<div class="language-markdown line-numbers-mode" data-ext="md"><pre v-pre class="language-markdown"><code><span class="token front-matter-block"><span class="token punctuation">---</span>
-<span class="token front-matter yaml language-yaml"><span class="token key atrule">title</span><span class="token punctuation">:</span> 页面标题</span>
-<span class="token punctuation">---</span></span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="页面信息" tabindex="-1"><a class="header-anchor" href="#页面信息" aria-hidden="true">#</a> 页面信息</h2>
-<p>你可以在 Markdown 的 Frontmatter 中设置页面信息。</p>
-<ul>
-<li>作者设置为 Ms.Hope。</li>
-<li>写作日期为 2023 年 1 月 1 日</li>
-<li>分类为 “使用指南”</li>
-<li>标签为 “页面配置” 和 “使用指南”</li>
-</ul>
-<h2 id="页面内容" tabindex="-1"><a class="header-anchor" href="#页面内容" aria-hidden="true">#</a> 页面内容</h2>
-<p>你可以自由在这里书写你的 Markdown。</p>
-<div class="hint-container tip">
-<p class="hint-container-title">图片引入</p>
-<ul>
-<li>你可以将图片和 Markdown 文件放置在一起使用相对路径进行引用。</li>
-<li>对于 <code v-pre>.vuepress/public</code> 文件夹的图片，请使用绝对链接 <code v-pre>/</code> 进行引用。</li>
-</ul>
-</div>
-<h2 id="组件" tabindex="-1"><a class="header-anchor" href="#组件" aria-hidden="true">#</a> 组件</h2>
-<p>每个 Markdown 页面都会被转换为一个 Vue 组件，这意味着你可以在 Markdown 中使用 Vue 语法：</p>
-<p>{{ 1 + 1 }}</p>
-<!-- markdownlint-disable MD033 -->
-<ul>
-  <li v-for="i in 3">{{ i }}</li>
-</ul>
-<!-- markdownlint-enable MD033 -->
-<p>你也可以创建并引入你自己的组件。</p>
-<MyComponent /><hr>
-<p>主题包含一些有用的组件。这里是一些例子:</p>
-<ul>
-<li>
-<p>文字结尾应该有深蓝色的 徽章文字 徽章。 <Badge text="徽章文字" color="#242378" /></p>
-</li>
-<li>
-<p>一个卡片:</p>
-<VPCard v-bind='{"title":"Mr.Hope","desc":"Where there is light, there is hope","logo":"https://mister-hope.com/logo.svg","link":"https://mister-hope.com","background":"rgba(253, 230, 138, 0.15)"}' /></li>
-</ul>
-</div></template>
+<template><div><h1 id="查出数据库type4类型为0" tabindex="-1"><a class="header-anchor" href="#查出数据库type4类型为0" aria-hidden="true">#</a> 查出数据库type4类型为0</h1>
+<h4 id="查出数据库type4类型为0-来判断来料待查-并在判断type1和type2不为null时将type4修改为1" tabindex="-1"><a class="header-anchor" href="#查出数据库type4类型为0-来判断来料待查-并在判断type1和type2不为null时将type4修改为1" aria-hidden="true">#</a> 查出数据库type4类型为0，来判断来料待查，并在判断type1和type2不为null时将type4修改为1</h4>
+<h3 id="_1、实体类" tabindex="-1"><a class="header-anchor" href="#_1、实体类" aria-hidden="true">#</a> 1、实体类</h3>
+<div class="language-java line-numbers-mode" data-ext="java"><pre v-pre class="language-java"><code><span class="token annotation punctuation">@Data</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ModuleInspectionBaseVO</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Schema</span><span class="token punctuation">(</span>description <span class="token operator">=</span> <span class="token string">"批号"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> batchNumber<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Schema</span><span class="token punctuation">(</span>description <span class="token operator">=</span> <span class="token string">"单双光"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> sadl<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Schema</span><span class="token punctuation">(</span>description <span class="token operator">=</span> <span class="token string">"倒卷时间"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@DateTimeFormat</span><span class="token punctuation">(</span>pattern <span class="token operator">=</span> <span class="token constant">FORMAT_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">LocalDateTime</span> rollCreationDate<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Schema</span><span class="token punctuation">(</span>description <span class="token operator">=</span> <span class="token string">"客户"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> customer<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Schema</span><span class="token punctuation">(</span>description <span class="token operator">=</span> <span class="token string">"来料宽度"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> rollWidth<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Schema</span><span class="token punctuation">(</span>description <span class="token operator">=</span> <span class="token string">"来料厚度"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> rollThickness<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Schema</span><span class="token punctuation">(</span>description <span class="token operator">=</span> <span class="token string">"合金状态"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> rollMetal<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Schema</span><span class="token punctuation">(</span>description <span class="token operator">=</span> <span class="token string">"米数"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> rollMeterQty<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Schema</span><span class="token punctuation">(</span>description <span class="token operator">=</span> <span class="token string">"来料重量"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">Double</span> rollQtyTon<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Schema</span><span class="token punctuation">(</span>description <span class="token operator">=</span> <span class="token string">"产品用途"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> rollProductUse<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Schema</span><span class="token punctuation">(</span>description <span class="token operator">=</span> <span class="token string">"亮面朝向"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> rollSurfaceEndFace<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Schema</span><span class="token punctuation">(</span>description <span class="token operator">=</span> <span class="token string">"来料管芯"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> rollChips<span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2、查询vo" tabindex="-1"><a class="header-anchor" href="#_2、查询vo" aria-hidden="true">#</a> 2、查询VO</h3>
+<div class="language-java line-numbers-mode" data-ext="java"><pre v-pre class="language-java"><code><span class="token annotation punctuation">@Schema</span><span class="token punctuation">(</span>description <span class="token operator">=</span> <span class="token string">"管理后台 - 倒卷成品查料分页 Request VO"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Data</span>
+<span class="token annotation punctuation">@EqualsAndHashCode</span><span class="token punctuation">(</span>callSuper <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@ToString</span><span class="token punctuation">(</span>callSuper <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ModuleInspectionPageReqTypeVO</span> <span class="token keyword">extends</span> <span class="token class-name">PageParam</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Schema</span><span class="token punctuation">(</span>description <span class="token operator">=</span> <span class="token string">"批号"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> batchNumber<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Schema</span><span class="token punctuation">(</span>description <span class="token operator">=</span> <span class="token string">"查料类型"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> type1<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Schema</span><span class="token punctuation">(</span>description <span class="token operator">=</span> <span class="token string">"厚度类型"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> type2<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Schema</span><span class="token punctuation">(</span>description<span class="token operator">=</span><span class="token string">"针孔类型"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> type3<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Schema</span><span class="token punctuation">(</span>description <span class="token operator">=</span> <span class="token string">"创建类型"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> type4<span class="token punctuation">;</span>
 
 
-<script setup>
-import { defineComponent, h, ref } from 'vue';
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_3、转换类" tabindex="-1"><a class="header-anchor" href="#_3、转换类" aria-hidden="true">#</a> 3、转换类</h3>
+<div class="language-java line-numbers-mode" data-ext="java"><pre v-pre class="language-java"><code><span class="token annotation punctuation">@Mapper</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">ModuleInspectionConvert</span> <span class="token punctuation">{</span>
 
-const MyComponent = defineComponent({
-  setup() {
-    const input = ref('Hello world!');
-    const onInput = (e) => {
-      input.value = e.target.value;
-    };
+    <span class="token class-name">PageResult</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ModuleInspectionRespVO</span><span class="token punctuation">></span></span> <span class="token function">convertPage</span><span class="token punctuation">(</span><span class="token class-name">PageResult</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ModuleInspectionDO</span><span class="token punctuation">></span></span> page<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-    return () => [
-      h('p', [
-        h('span','输入: '),
-        h('input', {
-          value: input.value,
-          onInput,
-        }),
-      ]),
-      h('p', [h('span','输出: '), input.value]),
-    ];
-  },
-});
-</script>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_4、mapper-类型为0表示待查" tabindex="-1"><a class="header-anchor" href="#_4、mapper-类型为0表示待查" aria-hidden="true">#</a> 4、Mapper 类型为0表示待查</h3>
+<div class="language-java line-numbers-mode" data-ext="java"><pre v-pre class="language-java"><code>   <span class="token keyword">default</span> <span class="token class-name">PageResult</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ModuleInspectionDO</span><span class="token punctuation">></span></span> <span class="token function">selectByType</span><span class="token punctuation">(</span><span class="token class-name">ModuleInspectionPageReqTypeVO</span> typeVO<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">selectPage</span><span class="token punctuation">(</span>typeVO<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">LambdaQueryWrapperX</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ModuleInspectionDO</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">eq</span><span class="token punctuation">(</span><span class="token class-name">ModuleInspectionDO</span><span class="token operator">::</span><span class="token function">getType4</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">orderByDesc</span><span class="token punctuation">(</span><span class="token class-name">ModuleInspectionDO</span><span class="token operator">::</span><span class="token function">getId</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_4-1、修改数据type4字段" tabindex="-1"><a class="header-anchor" href="#_4-1、修改数据type4字段" aria-hidden="true">#</a> 4.1、修改数据type4字段</h3>
+<div class="language-java line-numbers-mode" data-ext="java"><pre v-pre class="language-java"><code>   <span class="token doc-comment comment">/**
+     * 更新type字段
+     * <span class="token keyword">@param</span> <span class="token parameter">id</span>
+     * <span class="token keyword">@param</span> <span class="token parameter">type4</span>
+     * <span class="token keyword">@return</span>
+     */</span>
+    <span class="token annotation punctuation">@Update</span><span class="token punctuation">(</span><span class="token string">"UPDATE quality_module_inspection SET type4 = #{type4} WHERE id = #{id}"</span><span class="token punctuation">)</span>
+    <span class="token keyword">int</span> <span class="token function">updateType4</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Param</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span> <span class="token class-name">Long</span> id<span class="token punctuation">,</span> <span class="token annotation punctuation">@Param</span><span class="token punctuation">(</span><span class="token string">"type4"</span><span class="token punctuation">)</span> <span class="token class-name">Integer</span> type4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_5、创建接口-需要实现分页" tabindex="-1"><a class="header-anchor" href="#_5、创建接口-需要实现分页" aria-hidden="true">#</a> 5、创建接口，需要实现分页</h3>
+<div class="language-java line-numbers-mode" data-ext="java"><pre v-pre class="language-java"><code>   <span class="token doc-comment comment">/**
+     * 查出创建类型等于0的数据
+     * <span class="token keyword">@return</span> 创建类型等于0的列表
+     */</span>
+    <span class="token class-name">PageResult</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ModuleInspectionDO</span><span class="token punctuation">></span></span> <span class="token function">getModuleInspectionListType</span><span class="token punctuation">(</span><span class="token class-name">ModuleInspectionPageReqTypeVO</span> typeRespVO<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_6、实现接口" tabindex="-1"><a class="header-anchor" href="#_6、实现接口" aria-hidden="true">#</a> 6、实现接口</h3>
+<div class="language-java line-numbers-mode" data-ext="java"><pre v-pre class="language-java"><code> <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">PageResult</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ModuleInspectionDO</span><span class="token punctuation">></span></span> <span class="token function">getModuleInspectionListType</span><span class="token punctuation">(</span><span class="token class-name">ModuleInspectionPageReqTypeVO</span> typeRespVO<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//获取数据库中type4为0的数据</span>
+        <span class="token class-name">PageResult</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ModuleInspectionDO</span><span class="token punctuation">></span></span> type4Result <span class="token operator">=</span> moduleInspectionMapper<span class="token punctuation">.</span><span class="token function">selectByType</span><span class="token punctuation">(</span>typeRespVO<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 检查 type4Result 和 type4Result.getList() 是否为 null</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>type4Result <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> type4Result<span class="token punctuation">.</span><span class="token function">getList</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 遍历查询结果</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">ModuleInspectionDO</span> inspection <span class="token operator">:</span> type4Result<span class="token punctuation">.</span><span class="token function">getList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>inspection<span class="token punctuation">.</span><span class="token function">getType1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> inspection<span class="token punctuation">.</span><span class="token function">getType2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> inspection<span class="token punctuation">.</span><span class="token function">getType1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>inspection<span class="token punctuation">.</span><span class="token function">getType2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token comment">//设置type4为1</span>
+                    inspection<span class="token punctuation">.</span><span class="token function">setType4</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token comment">// 更新数据库中的记录</span>
+                    moduleInspectionMapper<span class="token punctuation">.</span><span class="token function">updateType4</span><span class="token punctuation">(</span>inspection<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 处理 type4Result 为 null 或列表为空的情况</span>
+            <span class="token keyword">throw</span> <span class="token function">exception</span><span class="token punctuation">(</span><span class="token constant">MODULE_INSPECTION_NOT_EXISTS_NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> type4Result<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_7、暴露接口个前端调用" tabindex="-1"><a class="header-anchor" href="#_7、暴露接口个前端调用" aria-hidden="true">#</a> 7、暴露接口个前端调用</h3>
+<div class="language-java line-numbers-mode" data-ext="java"><pre v-pre class="language-java"><code>  <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/stay"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@Operation</span><span class="token punctuation">(</span>summary <span class="token operator">=</span> <span class="token string">"获得待查信息分页"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@PreAuthorize</span><span class="token punctuation">(</span><span class="token string">"@ss.hasPermission('quality:module-inspection:stay')"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">CommonResult</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">PageResult</span><span class="token punctuation">&lt;</span><span class="token class-name">ModuleInspectionRespVO</span><span class="token punctuation">></span><span class="token punctuation">></span></span> <span class="token function">getModuleInspectionListType</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Valid</span> <span class="token class-name">ModuleInspectionPageReqTypeVO</span> typeRespVO<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">PageResult</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ModuleInspectionDO</span><span class="token punctuation">></span></span> pageResult <span class="token operator">=</span> moduleInspectionService<span class="token punctuation">.</span><span class="token function">getModuleInspectionListType</span><span class="token punctuation">(</span>typeRespVO<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token function">success</span><span class="token punctuation">(</span><span class="token class-name">ModuleInspectionConvert</span><span class="token punctuation">.</span><span class="token constant">INSTANCE</span><span class="token punctuation">.</span><span class="token function">convertPage</span><span class="token punctuation">(</span>pageResult<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div></template>
+
+

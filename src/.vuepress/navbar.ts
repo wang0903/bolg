@@ -11,7 +11,7 @@ export default navbar([
       {
         text: "Linux运维",
         icon: "pen-to-square",
-        prefix: "运维/",
+        prefix: "linux运维/",
         children: [
           {
             text: "Linux-LVM 磁盘扩容",
@@ -89,6 +89,11 @@ export default navbar([
             text: "SpringBoot上传文件到minio服务器",
             icon: "pen-to-square",
             link: "disable"
+          },
+          {
+            text: "成品去重和根据时间来查询",
+            icon: "pen-to-square",
+            link: "2"
           },
         ]
       },

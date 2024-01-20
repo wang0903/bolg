@@ -1,24 +1,36 @@
-<template><div><p>布局包括:</p>
-<ul>
-<li><a href="https://theme-hope.vuejs.press/zh/guide/layout/navbar.html" target="_blank" rel="noopener noreferrer">导航栏<ExternalLinkIcon/></a></li>
-<li><a href="https://theme-hope.vuejs.press/zh/guide/layout/sidebar.html" target="_blank" rel="noopener noreferrer">侧边栏<ExternalLinkIcon/></a></li>
-<li><a href="https://theme-hope.vuejs.press/zh/guide/layout/footer.html" target="_blank" rel="noopener noreferrer">页脚<ExternalLinkIcon/></a></li>
-</ul>
-<p>同时每个页面包含:</p>
-<ul>
-<li><a href="https://theme-hope.vuejs.press/zh/guide/layout/breadcrumb.html" target="_blank" rel="noopener noreferrer">路径导航<ExternalLinkIcon/></a></li>
-<li><a href="https://theme-hope.vuejs.press/zh/guide/feature/page-info.html" target="_blank" rel="noopener noreferrer">标题和页面信息<ExternalLinkIcon/></a></li>
-<li><a href="https://theme-hope.vuejs.press/zh/guide/layout/page.html#%E6%A0%87%E9%A2%98%E5%88%97%E8%A1%A8" target="_blank" rel="noopener noreferrer">TOC (文章标题列表)<ExternalLinkIcon/></a></li>
-<li><a href="https://theme-hope.vuejs.press/guide/feature/meta.html" target="_blank" rel="noopener noreferrer">贡献者、更新时间等页面元信息<ExternalLinkIcon/></a></li>
-<li><a href="https://theme-hope.vuejs.press/zh/guide/feature/comment.html" target="_blank" rel="noopener noreferrer">评论<ExternalLinkIcon/></a></li>
-</ul>
-<p>主题也带有以下元素:</p>
-<ul>
-<li><a href="https://theme-hope.vuejs.press/zh/guide/interface/darkmode.html" target="_blank" rel="noopener noreferrer">夜间模式按钮<ExternalLinkIcon/></a></li>
-<li><a href="https://theme-hope.vuejs.press/guide/interface/others.html#%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8%E6%8C%89%E9%92%AE" target="_blank" rel="noopener noreferrer">返回顶部按钮<ExternalLinkIcon/></a></li>
-<li><a href="https://theme-hope.vuejs.press/guide/interface/others.html#%E6%89%93%E5%8D%B0%E6%8C%89%E9%92%AE" target="_blank" rel="noopener noreferrer">打印按钮<ExternalLinkIcon/></a></li>
-</ul>
-<p>你可以在主题选项和页面的 frontmatter 中自定义它们。</p>
-</div></template>
+<template><div><h1 id="查询id与批号同时存在才能更新数据" tabindex="-1"><a class="header-anchor" href="#查询id与批号同时存在才能更新数据" aria-hidden="true">#</a> 查询ID与批号同时存在才能更新数据</h1>
+<div class="language-java line-numbers-mode" data-ext="java"><pre v-pre class="language-java"><code>    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">updateModuleInspection</span><span class="token punctuation">(</span><span class="token class-name">ModuleInspectionUpdateReqVO</span> updateReqVO<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token class-name">Long</span> id <span class="token operator">=</span> updateReqVO<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Long</span> moduleId <span class="token operator">=</span> moduleInspectionMapper<span class="token punctuation">.</span><span class="token function">selectCount</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">QueryWrapper</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ModuleInspectionDO</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">lambda</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">eq</span><span class="token punctuation">(</span><span class="token class-name">ModuleInspectionDO</span><span class="token operator">::</span><span class="token function">getId</span><span class="token punctuation">,</span> updateReqVO<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">and</span><span class="token punctuation">(</span>wrapper <span class="token operator">-></span> wrapper<span class="token punctuation">.</span><span class="token function">eq</span><span class="token punctuation">(</span><span class="token class-name">ModuleInspectionDO</span><span class="token operator">::</span><span class="token function">getBatchNumber</span><span class="token punctuation">,</span> updateReqVO<span class="token punctuation">.</span><span class="token function">getBatchNumber</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>moduleId <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">//检验是否存在</span>
+            <span class="token function">validateModuleInspectionExists</span><span class="token punctuation">(</span>updateReqVO<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">//更新</span>
+            <span class="token class-name">ModuleInspectionDO</span> updateObj <span class="token operator">=</span> <span class="token class-name">ModuleInspectionConvert</span><span class="token punctuation">.</span><span class="token constant">INSTANCE</span><span class="token punctuation">.</span><span class="token function">convert</span><span class="token punctuation">(</span>updateReqVO<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">// 执行更新操作</span>
+            moduleInspectionMapper<span class="token punctuation">.</span><span class="token function">updateById</span><span class="token punctuation">(</span>updateObj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token class-name">ModuleInspectionDO</span> moduleInspectionDO <span class="token operator">=</span> moduleInspectionMapper<span class="token punctuation">.</span><span class="token function">selectById</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">String</span> type1 <span class="token operator">=</span> moduleInspectionDO<span class="token punctuation">.</span><span class="token function">getType1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">String</span> type2 <span class="token operator">=</span> moduleInspectionDO<span class="token punctuation">.</span><span class="token function">getType2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">// TOD 当type1和type2不为null且不等于未检，且两个字段的值相等时，将type4字段的值修改为1</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">"已检"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>type1<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> type1<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>type2<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// TOD 将type4设置为1</span>
+                moduleInspectionDO<span class="token punctuation">.</span><span class="token function">setType4</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment">// 更新数据库中的记录</span>
+                moduleInspectionMapper<span class="token punctuation">.</span><span class="token function">updateType4</span><span class="token punctuation">(</span>moduleInspectionDO<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">throw</span> <span class="token function">exception</span><span class="token punctuation">(</span><span class="token constant">MODULE_DETECTION_BATCH_EXISTSSL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+
+    <span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div></template>
 
 

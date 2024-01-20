@@ -13,7 +13,7 @@ export default sidebar({
     {
       text: "前端文章",
       icon: "book",
-      prefix: "posts/",
+      prefix: "front/",
       children: "structure",
     },
     {

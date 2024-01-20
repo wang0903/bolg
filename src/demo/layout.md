@@ -1,31 +1,48 @@
 ---
-title: 布局
-icon: object-group
-order: 2
+icon: pen-to-square
+date: 2024-01-19
 category:
-  - 指南
+  - Java数据更新
 tag:
-  - 布局
+  - java
+  - 更新数据
+star: true
+sticky: true #标记
 ---
 
-布局包括:
+# 查询ID与批号同时存在才能更新数据
 
-- [导航栏](https://theme-hope.vuejs.press/zh/guide/layout/navbar.html)
-- [侧边栏](https://theme-hope.vuejs.press/zh/guide/layout/sidebar.html)
-- [页脚](https://theme-hope.vuejs.press/zh/guide/layout/footer.html)
+```java
+    @Override
+    public void updateModuleInspection(ModuleInspectionUpdateReqVO updateReqVO) {
 
-同时每个页面包含:
+        Long id = updateReqVO.getId();
+        Long moduleId = moduleInspectionMapper.selectCount(new QueryWrapper<ModuleInspectionDO>().lambda()
+                .eq(ModuleInspectionDO::getId, updateReqVO.getId())
+                .and(wrapper -> wrapper.eq(ModuleInspectionDO::getBatchNumber, updateReqVO.getBatchNumber())));
+        if (moduleId > 0) {
+            //检验是否存在
+            validateModuleInspectionExists(updateReqVO.getId());
+            //更新
+            ModuleInspectionDO updateObj = ModuleInspectionConvert.INSTANCE.convert(updateReqVO);
+            // 执行更新操作
+            moduleInspectionMapper.updateById(updateObj);
 
-- [路径导航](https://theme-hope.vuejs.press/zh/guide/layout/breadcrumb.html)
-- [标题和页面信息](https://theme-hope.vuejs.press/zh/guide/feature/page-info.html)
-- [TOC (文章标题列表)](https://theme-hope.vuejs.press/zh/guide/layout/page.html#标题列表)
-- [贡献者、更新时间等页面元信息](https://theme-hope.vuejs.press/guide/feature/meta.html)
-- [评论](https://theme-hope.vuejs.press/zh/guide/feature/comment.html)
+            ModuleInspectionDO moduleInspectionDO = moduleInspectionMapper.selectById(id);
+            String type1 = moduleInspectionDO.getType1();
+            String type2 = moduleInspectionDO.getType2();
 
-主题也带有以下元素:
+            // TOD 当type1和type2不为null且不等于未检，且两个字段的值相等时，将type4字段的值修改为1
+            if ("已检".equals(type1) && type1.equals(type2)) {
+                // TOD 将type4设置为1
+                moduleInspectionDO.setType4(1);
+                // 更新数据库中的记录
+                moduleInspectionMapper.updateType4(moduleInspectionDO.getId(), 1);
+            }
+        }else {
+            throw exception(MODULE_DETECTION_BATCH_EXISTSSL);
+        }
 
-- [夜间模式按钮](https://theme-hope.vuejs.press/zh/guide/interface/darkmode.html)
-- [返回顶部按钮](https://theme-hope.vuejs.press/guide/interface/others.html#返回顶部按钮)
-- [打印按钮](https://theme-hope.vuejs.press/guide/interface/others.html#打印按钮)
 
-你可以在主题选项和页面的 frontmatter 中自定义它们。
+    }
+```

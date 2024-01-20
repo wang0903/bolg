@@ -1,125 +1,162 @@
 ---
-# 这是文章的标题
-title: 页面配置
-# 你可以自定义封面图片
-cover: /assets/images/cover1.jpg
-# 这是页面的图标
-icon: file
-# 这是侧边栏的顺序
-order: 3
-# 设置作者
-author: 蜉蝣
-# 设置写作时间
-date: 2023-01-01
-# 一个页面可以有多个分类
+icon: pen-to-square
+date: 2024-01-19
 category:
-  - 使用指南
-# 一个页面可以有多个标签
+  - Java查询
 tag:
-  - 页面配置
-  - 使用指南
-# 此页面会在文章列表置顶
-sticky: true
-# 此页面会出现在星标文章中
+  - java
+  - 更新数据
 star: true
-# 你可以自定义页脚
-footer: 这是测试显示的页脚
-# 你可以自定义版权信息
-copyright: 无版权
+sticky: true #标记
 ---
+# 查出数据库type4类型为0
 
-`more` 注释之前的内容被视为文章摘要。
+#### 查出数据库type4类型为0，来判断来料待查，并在判断type1和type2不为null时将type4修改为1
 
-<!-- more -->
+### 1、实体类
 
-## 页面标题
+```java
+@Data
+public class ModuleInspectionBaseVO {
 
-The first H1 title in Markdown will be regarded as page title.
+    @Schema(description = "批号")
+    private String batchNumber;
 
-Markdown 中的第一个 H1 标题会被视为页面标题。
+    @Schema(description = "单双光")
+    private String sadl;
 
-你可以在 Markdown 的 Frontmatter 中设置页面标题。
+    @Schema(description = "倒卷时间")
+    @DateTimeFormat(pattern = FORMAT_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND)
+    private LocalDateTime rollCreationDate;
 
-```md
----
-title: 页面标题
----
+    @Schema(description = "客户")
+    private String customer;
+
+    @Schema(description = "来料宽度")
+    private String rollWidth;
+
+    @Schema(description = "来料厚度")
+    private String rollThickness;
+
+    @Schema(description = "合金状态")
+    private String rollMetal;
+
+    @Schema(description = "米数")
+    private String rollMeterQty;
+
+    @Schema(description = "来料重量")
+    private Double rollQtyTon;
+
+    @Schema(description = "产品用途")
+    private String rollProductUse;
+
+    @Schema(description = "亮面朝向")
+    private String rollSurfaceEndFace;
+
+    @Schema(description = "来料管芯")
+    private String rollChips;
+```
+### 2、查询VO
+
+```java
+@Schema(description = "管理后台 - 倒卷成品查料分页 Request VO")
+@Data
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
+public class ModuleInspectionPageReqTypeVO extends PageParam {
+
+    @Schema(description = "批号")
+    private String batchNumber;
+
+    @Schema(description = "查料类型")
+    private String type1;
+
+    @Schema(description = "厚度类型")
+    private String type2;
+
+    @Schema(description="针孔类型")
+    private String type3;
+
+    @Schema(description = "创建类型")
+    private String type4;
+
+
+}
+```
+### 3、转换类
+```java
+@Mapper
+public interface ModuleInspectionConvert {
+
+    PageResult<ModuleInspectionRespVO> convertPage(PageResult<ModuleInspectionDO> page);
+}
+
+```
+### 4、Mapper 类型为0表示待查
+```java
+   default PageResult<ModuleInspectionDO> selectByType(ModuleInspectionPageReqTypeVO typeVO){
+        return selectPage(typeVO, new LambdaQueryWrapperX<ModuleInspectionDO>()
+                .eq(ModuleInspectionDO::getType4,0)
+                .orderByDesc(ModuleInspectionDO::getId));
+    }
+```
+### 4.1、修改数据type4字段
+
+```java
+   /**
+     * 更新type字段
+     * @param id
+     * @param type4
+     * @return
+     */
+    @Update("UPDATE quality_module_inspection SET type4 = #{type4} WHERE id = #{id}")
+    int updateType4(@Param("id") Long id, @Param("type4") Integer type4);
+```
+### 5、创建接口，需要实现分页
+
+```java
+   /**
+     * 查出创建类型等于0的数据
+     * @return 创建类型等于0的列表
+     */
+    PageResult<ModuleInspectionDO> getModuleInspectionListType(ModuleInspectionPageReqTypeVO typeRespVO);
 ```
 
-## 页面信息
+### 6、实现接口
 
-你可以在 Markdown 的 Frontmatter 中设置页面信息。
+```java
+ @Override
+    public PageResult<ModuleInspectionDO> getModuleInspectionListType(ModuleInspectionPageReqTypeVO typeRespVO) {
+        //获取数据库中type4为0的数据
+        PageResult<ModuleInspectionDO> type4Result = moduleInspectionMapper.selectByType(typeRespVO);
 
-- 作者设置为 Ms.Hope。
-- 写作日期为 2023 年 1 月 1 日
-- 分类为 “使用指南”
-- 标签为 “页面配置” 和 “使用指南”
+        // 检查 type4Result 和 type4Result.getList() 是否为 null
+        if (type4Result != null && type4Result.getList() != null) {
+            // 遍历查询结果
+            for (ModuleInspectionDO inspection : type4Result.getList()) {
+                if (inspection.getType1() != null && inspection.getType2() != null && inspection.getType1().equals(inspection.getType2())) {
+                    //设置type4为1
+                    inspection.setType4(1);
+                    // 更新数据库中的记录
+                    moduleInspectionMapper.updateType4(inspection.getId(), 1);
+                }
+            }
+        } else {
+            // 处理 type4Result 为 null 或列表为空的情况
+            throw exception(MODULE_INSPECTION_NOT_EXISTS_NULL);
+        }
+        return type4Result;
+    }
+```
 
-## 页面内容
+### 7、暴露接口个前端调用
 
-你可以自由在这里书写你的 Markdown。
-
-::: tip 图片引入
-
-- 你可以将图片和 Markdown 文件放置在一起使用相对路径进行引用。
-- 对于 `.vuepress/public` 文件夹的图片，请使用绝对链接 `/` 进行引用。
-
-:::
-
-## 组件
-
-每个 Markdown 页面都会被转换为一个 Vue 组件，这意味着你可以在 Markdown 中使用 Vue 语法：
-
-{{ 1 + 1 }}
-
-<!-- markdownlint-disable MD033 -->
-
-<ul>
-  <li v-for="i in 3">{{ i }}</li>
-</ul>
-
-<!-- markdownlint-enable MD033 -->
-
-你也可以创建并引入你自己的组件。
-
-<MyComponent />
-
-<script setup>
-import { defineComponent, h, ref } from 'vue';
-
-const MyComponent = defineComponent({
-  setup() {
-    const input = ref('Hello world!');
-    const onInput = (e) => {
-      input.value = e.target.value;
-    };
-
-    return () => [
-      h('p', [
-        h('span','输入: '),
-        h('input', {
-          value: input.value,
-          onInput,
-        }),
-      ]),
-      h('p', [h('span','输出: '), input.value]),
-    ];
-  },
-});
-</script>
-
----
-
-主题包含一些有用的组件。这里是一些例子:
-
-- 文字结尾应该有深蓝色的 徽章文字 徽章。 <Badge text="徽章文字" color="#242378" />
-
-- 一个卡片:
-
-  ```component VPCard
-  title: Mr.Hope
-  desc: Where there is light, there is hope
-  logo: https://mister-hope.com/logo.svg
-  link: https://mister-hope.com
-  background: rgba(253, 230, 138, 0.15)
-  ```
+```java
+  @GetMapping("/stay")
+    @Operation(summary = "获得待查信息分页")
+    @PreAuthorize("@ss.hasPermission('quality:module-inspection:stay')")
+    public CommonResult<PageResult<ModuleInspectionRespVO>> getModuleInspectionListType(@Valid ModuleInspectionPageReqTypeVO typeRespVO) {
+        PageResult<ModuleInspectionDO> pageResult = moduleInspectionService.getModuleInspectionListType(typeRespVO);
+        return success(ModuleInspectionConvert.INSTANCE.convertPage(pageResult));
+    }
+```
