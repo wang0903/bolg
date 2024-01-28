@@ -66,13 +66,29 @@ export default navbar([
             icon: "pen-to-square",
             link: "5",
           },
+          {
+            text: "Prometheus、Alertmanager、grafana部署",
+            icon: "pen-to-square",
+            link: "6",
+          },
+          {
+            text: "ELFK部署",
+            icon: "pen-to-square",
+            link: "7",
+          },
+          {
+            text: "DevOps自动化部署",
+            icon: "pen-to-square",
+            link: "8",
+          },
+          {
+            text: "微服务K8S部署",
+            icon: "pen-to-square",
+            link: "9",
+          },
 
         ],
       },
-      { text: "樱桃", icon: "pen-to-square", link: "cherry" },
-      { text: "火龙果", icon: "pen-to-square", link: "dragonfruit" },
-      "tomato",
-      "strawberry",
     ],
   },
   {
@@ -83,18 +99,63 @@ export default navbar([
       {
         text: "java",
         icon: "pen-to-square",
-        prefix: "java/",
+        prefix: "java文章",
         children: [
           {
             text: "SpringBoot上传文件到minio服务器",
             icon: "pen-to-square",
-            link: "disable"
+            link: "3"
           },
           {
             text: "成品去重和根据时间来查询",
             icon: "pen-to-square",
             link: "2"
           },
+          {
+            text: "根据类型统计重量接口和返回数据",
+            icon: "pen-to-square",
+            link: "1"
+          },
+          {
+            text: "将数据求和存入数组中",
+            icon: "pen-to-square",
+            link: "4"
+          },
+          {
+            text: "根据批号批量查询数据",
+            icon: "pen-to-square",
+            link: "5"
+          },
+          {
+            text: "查询ID与批号同时存在才能更新数据",
+            icon: "pen-to-square",
+            link: "6"
+          },
+          {
+            text: "根据类型等于1的数据判断返回给前端",
+            icon: "pen-to-square",
+            link: "7"
+          },
+          {
+            text: "查出数据库type4类型为0",
+            icon: "pen-to-square",
+            link: "8"
+          },
+        ]
+      },
+    ]
+  },
+  {
+    text: "前端文档",
+    icon: "pen-to-square",
+    prefix: "/front/",
+    children: [
+      {
+        text: "vue",
+        icon: "pen-to-square",
+        prefix: "vue文章",
+        children: [
+
         ]
       },
     ]
