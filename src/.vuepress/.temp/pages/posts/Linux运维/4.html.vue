@@ -1,0 +1,45 @@
+<template><div><h1 id="linux自动备份" tabindex="-1"><a class="header-anchor" href="#linux自动备份" aria-hidden="true">#</a> Linux自动备份</h1>
+<h3 id="_1、在-debian-系统-如-ubuntu-上安装-cron" tabindex="-1"><a class="header-anchor" href="#_1、在-debian-系统-如-ubuntu-上安装-cron" aria-hidden="true">#</a> 1、在 Debian 系统（如 Ubuntu）上安装 cron：</h3>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">apt</span> update
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">cron</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2、创建一个备份脚本-例如-backup-sh" tabindex="-1"><a class="header-anchor" href="#_2、创建一个备份脚本-例如-backup-sh" aria-hidden="true">#</a> 2、创建一个备份脚本，例如 backup.sh：</h3>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+
+<span class="token comment"># 设置备份源和目标目录</span>
+<span class="token assign-left variable">source_dir</span><span class="token operator">=</span><span class="token string">"/home/mes/work/nginx/html"</span>
+<span class="token assign-left variable">backup_dir</span><span class="token operator">=</span><span class="token string">"/home/mes/backups/"</span>
+
+<span class="token comment"># 创建备份目标目录（如果不存在）</span>
+<span class="token function">mkdir</span> <span class="token parameter variable">-p</span> <span class="token string">"<span class="token variable">$backup_dir</span>"</span>
+
+<span class="token comment"># 设置备份文件名，使用日期作为标识</span>
+<span class="token assign-left variable">backup_filename</span><span class="token operator">=</span><span class="token string">"backup_<span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> +%Y%m%d%H%M%S<span class="token variable">)</span></span>.tar.gz"</span>
+
+<span class="token comment"># 执行备份命令</span>
+<span class="token function">rsync</span> <span class="token parameter variable">-a</span> <span class="token parameter variable">--delete</span> <span class="token string">"<span class="token variable">$source_dir</span>"</span> <span class="token string">"<span class="token variable">$backup_dir</span>"</span>
+
+<span class="token comment"># 压缩备份文件</span>
+<span class="token function">tar</span> <span class="token parameter variable">-czf</span> <span class="token string">"<span class="token variable">${backup_dir}</span><span class="token variable">${backup_filename}</span>"</span> <span class="token parameter variable">-C</span> <span class="token string">"<span class="token variable">$source_dir</span>"</span> <span class="token builtin class-name">.</span>
+
+<span class="token comment"># 删除过期备份，保留最近7天的备份数据</span>
+<span class="token function">find</span> <span class="token string">"<span class="token variable">$backup_dir</span>"</span> <span class="token parameter variable">-name</span> <span class="token string">"backup_*"</span> <span class="token parameter variable">-mtime</span> +7 <span class="token parameter variable">-exec</span> <span class="token function">rm</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">\</span><span class="token punctuation">;</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"备份完成"</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_3、赋给脚本文件运行权限" tabindex="-1"><a class="header-anchor" href="#_3、赋给脚本文件运行权限" aria-hidden="true">#</a> 3、赋给脚本文件运行权限</h3>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">chmod</span> +x backup.sh
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="_4、将脚本文件放到-usr-bin目录下-让其自动运行" tabindex="-1"><a class="header-anchor" href="#_4、将脚本文件放到-usr-bin目录下-让其自动运行" aria-hidden="true">#</a> 4、将脚本文件放到/usr/bin目录下,让其自动运行</h3>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">mv</span> backup.sh /usr/bin/backup.sh
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="_5、编辑-crontab-文件-添加以下行来设置定时任务" tabindex="-1"><a class="header-anchor" href="#_5、编辑-crontab-文件-添加以下行来设置定时任务" aria-hidden="true">#</a> 5、编辑 crontab 文件，添加以下行来设置定时任务：</h3>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">crontab</span> <span class="token parameter variable">-e</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="_5、设置定时任务-每天凌晨2点备份一次" tabindex="-1"><a class="header-anchor" href="#_5、设置定时任务-每天凌晨2点备份一次" aria-hidden="true">#</a> 5、设置定时任务，每天凌晨2点备份一次</h3>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token number">0</span> <span class="token number">2</span> * * * /usr/bin/backup.sh
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="_6、保存并退出-crontab-文件" tabindex="-1"><a class="header-anchor" href="#_6、保存并退出-crontab-文件" aria-hidden="true">#</a> 6、保存并退出 crontab 文件</h3>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code>:wq
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="_7、查看定时任务是否设置成功" tabindex="-1"><a class="header-anchor" href="#_7、查看定时任务是否设置成功" aria-hidden="true">#</a> 7、查看定时任务是否设置成功</h3>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">crontab</span> <span class="token parameter variable">-l</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="_8、重启-cron-服务" tabindex="-1"><a class="header-anchor" href="#_8、重启-cron-服务" aria-hidden="true">#</a> 8、重启 cron 服务</h3>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> systemctl restart <span class="token function">cron</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="_9、查看-cron-服务状态" tabindex="-1"><a class="header-anchor" href="#_9、查看-cron-服务状态" aria-hidden="true">#</a> 9、查看 cron 服务状态</h3>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> systemctl status <span class="token function">cron</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></div></template>
+
+
