@@ -91,7 +91,6 @@ export default navbar([
             icon: "pen-to-square",
             link: "10",
           }
-
         ],
       },
     ],
