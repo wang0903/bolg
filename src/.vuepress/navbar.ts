@@ -86,6 +86,11 @@ export default navbar([
             icon: "pen-to-square",
             link: "9",
           },
+          {
+            text: "xtrabackup备份MySQL数据库",
+            icon: "pen-to-square",
+            link: "10",
+          }
 
         ],
       },
