@@ -16,23 +16,22 @@ export default navbar([
           {
             text: "Linux-LVM 磁盘扩容",
             icon: "pen-to-square",
-            link: "1"
+            link: "1",
           },
           {
             text: "Ubuntu防火墙设置",
             icon: "pen-to-square",
-            link: "2"
+            link: "2",
           },
           {
             text: "minio文件服务器",
             icon: "pen-to-square",
-            link:
-              "3"
+            link: "3",
           },
           {
             text: "Linux自动备份",
             icon: "pen-to-square",
-            link: "4"
+            link: "4",
           },
         ],
       },
@@ -90,7 +89,7 @@ export default navbar([
             text: "xtrabackup备份MySQL数据库",
             icon: "pen-to-square",
             link: "10",
-          }
+          },
         ],
       },
     ],
@@ -108,46 +107,46 @@ export default navbar([
           {
             text: "SpringBoot上传文件到minio服务器",
             icon: "pen-to-square",
-            link: "3"
+            link: "3",
           },
           {
             text: "成品去重和根据时间来查询",
             icon: "pen-to-square",
-            link: "2"
+            link: "2",
           },
           {
             text: "根据类型统计重量接口和返回数据",
             icon: "pen-to-square",
-            link: "1"
+            link: "1",
           },
           {
             text: "将数据求和存入数组中",
             icon: "pen-to-square",
-            link: "4"
+            link: "4",
           },
           {
             text: "根据批号批量查询数据",
             icon: "pen-to-square",
-            link: "5"
+            link: "5",
           },
           {
             text: "查询ID与批号同时存在才能更新数据",
             icon: "pen-to-square",
-            link: "6"
+            link: "6",
           },
           {
             text: "根据类型等于1的数据判断返回给前端",
             icon: "pen-to-square",
-            link: "7"
+            link: "7",
           },
           {
             text: "查出数据库type4类型为0",
             icon: "pen-to-square",
-            link: "8"
+            link: "8",
           },
-        ]
+        ],
       },
-    ]
+    ],
   },
   {
     text: "前端文档",
@@ -158,11 +157,33 @@ export default navbar([
         text: "vue",
         icon: "pen-to-square",
         prefix: "vue文章",
-        children: [
-
-        ]
+        children: [],
       },
-    ]
+    ],
+  },
+  {
+    text: "网络安全",
+    icon: "pen-to-square",
+    prefix: "/safety/",
+    children: [
+      {
+        text: "安全检测",
+        icon: "pen-to-square",
+        //prefix: "漏洞检测",
+        children: [
+          {
+            text: "awvs和nessus安装",
+            icon: "pen-to-square",
+            link: "1",
+          },
+          {
+            text: "安装v2rayA",
+            icon: "pen-to-square",
+            link: "2",
+          },
+        ],
+      },
+    ],
   },
   // {
   //   text: "V2 文档",

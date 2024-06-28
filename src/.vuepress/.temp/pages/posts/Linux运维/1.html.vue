@@ -329,12 +329,13 @@ Logical volume ubuntu-vg/ubuntu-lv successfully resized.
 <li>刷新分区</li>
 </ul>
 <div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code>resize2fs /dev/ubuntu-vg/ubuntu-lv
-
+<span class="token comment">#当格式为 xfs 要使用以下命令刷新</span>
+xfs_growfs  /dev/ubuntu-vg/ubuntu-lv
 <span class="token comment"># 输出如下</span>
 Filesystem at /dev/ubuntu-vg/ubuntu-lv is mounted on /<span class="token punctuation">;</span> on-line resizing required
 old_desc_blocks <span class="token operator">=</span> <span class="token number">3</span>, new_desc_blocks <span class="token operator">=</span> <span class="token number">5</span>
 The filesystem on /dev/ubuntu-vg/ubuntu-lv is now <span class="token number">10221568</span> <span class="token punctuation">(</span>4k<span class="token punctuation">)</span> blocks long.
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>验证是否成功</li>
 </ul>
 <div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code>lvdisplay

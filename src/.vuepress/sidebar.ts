@@ -22,6 +22,12 @@ export default sidebar({
       prefix: "posts/",
       children: "structure",
     },
+    {
+      text: "网络安全",
+      icon: "book",
+      prefix: "safety/",
+      children: "structure",
+    },
     "intro",
     {
       text: "幻灯片",
