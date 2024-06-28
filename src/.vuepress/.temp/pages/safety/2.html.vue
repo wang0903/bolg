@@ -2,36 +2,36 @@
 <h2 id="debian-ubuntu-kalilinux" tabindex="-1"><a class="header-anchor" href="#debian-ubuntu-kalilinux" aria-hidden="true">#</a> Debian/Ubuntu/kaliLinux</h2>
 <p>官网：https://v2raya.org/en/</p>
 <p>v2rayA 的功能依赖于 V2Ray 核心，因此需要安装内核。</p>
-<h4 id="方法一-通过软件源安装" tabindex="-1"><a class="header-anchor" href="#方法一-通过软件源安装" aria-hidden="true">#</a> 方法一：通过软件源安装</h4>
-<h5 id="_1、公钥" tabindex="-1"><a class="header-anchor" href="#_1、公钥" aria-hidden="true">#</a> 1、公钥</h5>
+<h2 id="方法一-通过软件源安装" tabindex="-1"><a class="header-anchor" href="#方法一-通过软件源安装" aria-hidden="true">#</a> 方法一：通过软件源安装</h2>
+<h3 id="_1、公钥" tabindex="-1"><a class="header-anchor" href="#_1、公钥" aria-hidden="true">#</a> 1、公钥</h3>
 <div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">wget</span> <span class="token parameter variable">-qO</span> - https://apt.v2raya.org/key/public-key.asc <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> /etc/apt/keyrings/v2raya.asc
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h5 id="_2、添加v2raya软件源" tabindex="-1"><a class="header-anchor" href="#_2、添加v2raya软件源" aria-hidden="true">#</a> 2、添加V2RayA软件源</h5>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="_2、添加v2raya软件源" tabindex="-1"><a class="header-anchor" href="#_2、添加v2raya软件源" aria-hidden="true">#</a> 2、添加V2RayA软件源</h3>
 <div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token builtin class-name">echo</span> <span class="token string">"deb [signed-by=/etc/apt/keyrings/v2raya.asc] https://apt.v2raya.org/ v2raya main"</span> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> /etc/apt/sources.list.d/v2raya.list
 <span class="token function">sudo</span> <span class="token function">apt</span> update
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h5 id="_3、安装" tabindex="-1"><a class="header-anchor" href="#_3、安装" aria-hidden="true">#</a> 3、安装</h5>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_3、安装" tabindex="-1"><a class="header-anchor" href="#_3、安装" aria-hidden="true">#</a> 3、安装</h3>
 <div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> v2raya v2ray <span class="token comment">## you can install xray package instead of if you want</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h4 id="方法-二-手动安装-deb" tabindex="-1"><a class="header-anchor" href="#方法-二-手动安装-deb" aria-hidden="true">#</a> 方法 二：手动安装 deb</h4>
-<h5 id="_1、下载deb包之后-可以使用gdebi、qapt等图形化工具进行安装-也可以使用命令行" tabindex="-1"><a class="header-anchor" href="#_1、下载deb包之后-可以使用gdebi、qapt等图形化工具进行安装-也可以使用命令行" aria-hidden="true">#</a> 1、<a href="https://github.com/v2rayA/v2rayA/releases" target="_blank" rel="noopener noreferrer">下载deb包<ExternalLinkIcon/></a>之后 可以使用Gdebi、QApt等图形化工具进行安装，也可以使用命令行：</h5>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="方法-二-手动安装-deb" tabindex="-1"><a class="header-anchor" href="#方法-二-手动安装-deb" aria-hidden="true">#</a> 方法 二：手动安装 deb</h2>
+<h3 id="_1、下载deb包之后-可以使用gdebi、qapt等图形化工具进行安装-也可以使用命令行" tabindex="-1"><a class="header-anchor" href="#_1、下载deb包之后-可以使用gdebi、qapt等图形化工具进行安装-也可以使用命令行" aria-hidden="true">#</a> 1、<a href="https://github.com/v2rayA/v2rayA/releases" target="_blank" rel="noopener noreferrer">下载deb包<ExternalLinkIcon/></a>之后 可以使用Gdebi、QApt等图形化工具进行安装，也可以使用命令行：</h3>
 <div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> /path/download/installer_debian_xxx_vxxx.deb <span class="token comment">### Replace the actual path where the deb package is located by yourself</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>可以在<a href="https://github.com/v2rayA/v2raya-apt/tree/master/pool/main/" target="_blank" rel="noopener noreferrer">APT Repo中找到 V2Ray 和 Xray debian 软件包<ExternalLinkIcon/></a></p>
 <p>启动 v2rayA / 启用 v2rayA 自动启动</p>
 <blockquote>
 <p>从1.5版本开始，将不再默认启动v2rayA并设置自动启动。</p>
 </blockquote>
-<h5 id="_2、启动-v2raya" tabindex="-1"><a class="header-anchor" href="#_2、启动-v2raya" aria-hidden="true">#</a> 2、启动 v2rayA</h5>
+<h3 id="_2、启动-v2raya" tabindex="-1"><a class="header-anchor" href="#_2、启动-v2raya" aria-hidden="true">#</a> 2、启动 v2rayA</h3>
 <div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> systemctl start v2raya.service
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h5 id="_3、设置自动启动" tabindex="-1"><a class="header-anchor" href="#_3、设置自动启动" aria-hidden="true">#</a> 3、设置自动启动</h5>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="_3、设置自动启动" tabindex="-1"><a class="header-anchor" href="#_3、设置自动启动" aria-hidden="true">#</a> 3、设置自动启动</h3>
 <div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> v2raya.service
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h4 id="方法三-docker安装" tabindex="-1"><a class="header-anchor" href="#方法三-docker安装" aria-hidden="true">#</a> 方法三：docker安装</h4>
-<h5 id="官网https-v2raya-org-en-docs-prologue-installation-docker" tabindex="-1"><a class="header-anchor" href="#官网https-v2raya-org-en-docs-prologue-installation-docker" aria-hidden="true">#</a> 官网https://v2raya.org/en/docs/prologue/installation/docker/</h5>
-<h5 id="_1、镜像下载" tabindex="-1"><a class="header-anchor" href="#_1、镜像下载" aria-hidden="true">#</a> 1、镜像下载</h5>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="方法三-docker安装" tabindex="-1"><a class="header-anchor" href="#方法三-docker安装" aria-hidden="true">#</a> 方法三：docker安装</h2>
+<h3 id="官网https-v2raya-org-en-docs-prologue-installation-docker" tabindex="-1"><a class="header-anchor" href="#官网https-v2raya-org-en-docs-prologue-installation-docker" aria-hidden="true">#</a> 官网https://v2raya.org/en/docs/prologue/installation/docker/</h3>
+<h3 id="_1、镜像下载" tabindex="-1"><a class="header-anchor" href="#_1、镜像下载" aria-hidden="true">#</a> 1、镜像下载</h3>
 <div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">docker</span> pull mzz2017/v2raya
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><ol>
 <li><strong><code v-pre>V2RAYA_V2RAY_BIN</code>应该是<code v-pre>/usr/local/bin/v2ray</code>或者<code v-pre>/usr/local/bin/xray</code>，v2rayA 默认核心是 xray。</strong></li>
 <li><strong>如果您的主机操作系统正在使用本机 nftables，请设置<code v-pre>V2RAYA_NFTABLES_SUPPORT</code>为。<code v-pre>on</code></strong></li>
 <li><strong>如果您的主机操作系统正在使用 iptables，那么您可以<code v-pre>IPTABLES_MODE</code>选择您的 iptables 后端，它可以是<code v-pre>nftables</code>（使用 nft 后端）或<code v-pre>legacy</code>（使用旧式 iptables 后端）。</strong></li>
 </ol>
-<h5 id="_2、运行docker容器" tabindex="-1"><a class="header-anchor" href="#_2、运行docker容器" aria-hidden="true">#</a> 2、运行docker容器</h5>
+<h3 id="_2、运行docker容器" tabindex="-1"><a class="header-anchor" href="#_2、运行docker容器" aria-hidden="true">#</a> 2、运行docker容器</h3>
 <div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token punctuation">\</span>
   <span class="token parameter variable">--restart</span><span class="token operator">=</span>always <span class="token punctuation">\</span>
   <span class="token parameter variable">--privileged</span> <span class="token punctuation">\</span>
@@ -57,7 +57,7 @@
   mzz2017/v2raya
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>检查状态：</p>
 <div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">docker</span> container stats v2raya
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h5 id="方法-2-获取特定版本" tabindex="-1"><a class="header-anchor" href="#方法-2-获取特定版本" aria-hidden="true">#</a> <a href="https://v2raya.org/en/docs/prologue/installation/docker/#method-2-get-a-specific-version" target="_blank" rel="noopener noreferrer">方法 2：获取特定<ExternalLinkIcon/></a>版本</h5>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="方法-2-获取特定版本" tabindex="-1"><a class="header-anchor" href="#方法-2-获取特定版本" aria-hidden="true">#</a> <a href="https://v2raya.org/en/docs/prologue/installation/docker/#method-2-get-a-specific-version" target="_blank" rel="noopener noreferrer">方法 2：获取特定<ExternalLinkIcon/></a>版本</h3>
 <p>Docker 允许用户同时下载不同版本的 v2rayA，通过使用不同的端口，用户还可以运行多个不同版本的 v2rayA。</p>
 <p>获取 Docker</p>
 <p>获取最新版本号：</p>
@@ -92,7 +92,7 @@
   mzz2017/v2raya:<span class="token variable">$Latest_version</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>检查状态：</p>
 <div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">docker</span> container stats v2raya
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h4 id="升级-v2raya" tabindex="-1"><a class="header-anchor" href="#升级-v2raya" aria-hidden="true">#</a> 升级 v2rayA</h4>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="升级-v2raya" tabindex="-1"><a class="header-anchor" href="#升级-v2raya" aria-hidden="true">#</a> 升级 v2rayA</h3>
 <p><a href="https://v2raya.org/en/docs/prologue/installation/docker/#pull-the-image" target="_blank" rel="noopener noreferrer">使用拉取镜像<ExternalLinkIcon/></a>中提到的命令 获取镜像的最新版本，然后停止当前容器。</p>
 <div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">docker</span> container stop v2raya
 <span class="token function">docker</span> container <span class="token function">rm</span> v2raya
