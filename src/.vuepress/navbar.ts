@@ -92,6 +92,23 @@ export default navbar([
           },
         ],
       },
+      {
+        text: "K8S学习",
+        icon: "pen-to-square",
+        prefix: "k8s学习/",
+        children: [
+          {
+            text: "k8s学习文档",
+            icon: "pen-to-square",
+            link: "1",
+          },
+          {
+            text: "traefik学习",
+            icon: "pen-to-square",
+            link: "2",
+          },
+        ],
+      },
     ],
   },
   {
