@@ -44,5 +44,10 @@ projects:
     desc: java 权限认证框架
     link: https://sa-token.cc/
 
+  - icon: /assets/icon/element-plus-logo.svg
+    name: Element Plus
+    desc: 基于 Vue 3，面向设计师和开发者的组件库
+    link: https://element-plus.org/zh-CN/
+
 footer: 在你没有成为武林高手之前，请专心练剑。
 

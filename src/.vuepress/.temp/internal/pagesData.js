@@ -25,6 +25,8 @@ export const pagesData = {
   "v-e266ada2": () => import(/* webpackChunkName: "v-e266ada2" */"D:/pord/bolg/src/.vuepress/.temp/pages/demo/java文章/7.html.js").then(({ data }) => data),
   // path: /demo/java%E6%96%87%E7%AB%A0/8.html
   "v-defcfc64": () => import(/* webpackChunkName: "v-defcfc64" */"D:/pord/bolg/src/.vuepress/.temp/pages/demo/java文章/8.html.js").then(({ data }) => data),
+  // path: /demo/java%E6%96%87%E7%AB%A0/9.html
+  "v-db934b26": () => import(/* webpackChunkName: "v-db934b26" */"D:/pord/bolg/src/.vuepress/.temp/pages/demo/java文章/9.html.js").then(({ data }) => data),
   // path: /posts/k8s%E5%AD%A6%E4%B9%A0/1.html
   "v-8b3f303e": () => import(/* webpackChunkName: "v-8b3f303e" */"D:/pord/bolg/src/.vuepress/.temp/pages/posts/k8s学习/1.html.js").then(({ data }) => data),
   // path: /posts/k8s%E5%AD%A6%E4%B9%A0/2.html
@@ -103,30 +105,34 @@ export const pagesData = {
   "v-1bb44d6e": () => import(/* webpackChunkName: "v-1bb44d6e" */"D:/pord/bolg/src/.vuepress/.temp/pages/category/java查询/index.html.js").then(({ data }) => data),
   // path: /tag/java/
   "v-28a1d8bf": () => import(/* webpackChunkName: "v-28a1d8bf" */"D:/pord/bolg/src/.vuepress/.temp/pages/tag/java/index.html.js").then(({ data }) => data),
-  // path: /category/ubuntu22.04%E9%98%B2%E7%81%AB%E5%A2%99/
-  "v-66e94653": () => import(/* webpackChunkName: "v-66e94653" */"D:/pord/bolg/src/.vuepress/.temp/pages/category/ubuntu22.04防火墙/index.html.js").then(({ data }) => data),
+  // path: /category/java%E9%BB%98%E8%AE%A4%E6%8F%92%E5%85%A5%E5%AD%90%E8%A1%A8/
+  "v-36233645": () => import(/* webpackChunkName: "v-36233645" */"D:/pord/bolg/src/.vuepress/.temp/pages/category/java默认插入子表/index.html.js").then(({ data }) => data),
   // path: /tag/%E6%9B%B4%E6%96%B0%E6%95%B0%E6%8D%AE/
   "v-2ff17cf3": () => import(/* webpackChunkName: "v-2ff17cf3" */"D:/pord/bolg/src/.vuepress/.temp/pages/tag/更新数据/index.html.js").then(({ data }) => data),
-  // path: /category/minio%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/
-  "v-c81bf392": () => import(/* webpackChunkName: "v-c81bf392" */"D:/pord/bolg/src/.vuepress/.temp/pages/category/minio文件服务器/index.html.js").then(({ data }) => data),
+  // path: /category/ubuntu22.04%E9%98%B2%E7%81%AB%E5%A2%99/
+  "v-66e94653": () => import(/* webpackChunkName: "v-66e94653" */"D:/pord/bolg/src/.vuepress/.temp/pages/category/ubuntu22.04防火墙/index.html.js").then(({ data }) => data),
   // path: /tag/%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2/
   "v-665b7f94": () => import(/* webpackChunkName: "v-665b7f94" */"D:/pord/bolg/src/.vuepress/.temp/pages/tag/数据查询/index.html.js").then(({ data }) => data),
-  // path: /category/linux%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD/
-  "v-65c68654": () => import(/* webpackChunkName: "v-65c68654" */"D:/pord/bolg/src/.vuepress/.temp/pages/category/linux自动备份/index.html.js").then(({ data }) => data),
+  // path: /category/minio%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/
+  "v-c81bf392": () => import(/* webpackChunkName: "v-c81bf392" */"D:/pord/bolg/src/.vuepress/.temp/pages/category/minio文件服务器/index.html.js").then(({ data }) => data),
   // path: /tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/
   "v-07d4d556": () => import(/* webpackChunkName: "v-07d4d556" */"D:/pord/bolg/src/.vuepress/.temp/pages/tag/文件上传/index.html.js").then(({ data }) => data),
-  // path: /category/docker%E5%AE%89%E8%A3%85nginx%EF%BC%8C%E5%B9%B6%E9%85%8D%E7%BD%AEssl%E8%AF%81%E4%B9%A6/
-  "v-5dd66321": () => import(/* webpackChunkName: "v-5dd66321" */"D:/pord/bolg/src/.vuepress/.temp/pages/category/docker安装nginx，并配置ssl证书/index.html.js").then(({ data }) => data),
+  // path: /category/linux%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD/
+  "v-65c68654": () => import(/* webpackChunkName: "v-65c68654" */"D:/pord/bolg/src/.vuepress/.temp/pages/category/linux自动备份/index.html.js").then(({ data }) => data),
   // path: /tag/minio/
   "v-1db5eff6": () => import(/* webpackChunkName: "v-1db5eff6" */"D:/pord/bolg/src/.vuepress/.temp/pages/tag/minio/index.html.js").then(({ data }) => data),
-  // path: /category/%E7%BC%96%E5%86%99%E5%A4%87%E4%BB%BD%E8%84%9A%E6%9C%AC/
-  "v-ed243858": () => import(/* webpackChunkName: "v-ed243858" */"D:/pord/bolg/src/.vuepress/.temp/pages/category/编写备份脚本/index.html.js").then(({ data }) => data),
+  // path: /category/docker%E5%AE%89%E8%A3%85nginx%EF%BC%8C%E5%B9%B6%E9%85%8D%E7%BD%AEssl%E8%AF%81%E4%B9%A6/
+  "v-5dd66321": () => import(/* webpackChunkName: "v-5dd66321" */"D:/pord/bolg/src/.vuepress/.temp/pages/category/docker安装nginx，并配置ssl证书/index.html.js").then(({ data }) => data),
   // path: /tag/lvm%E6%89%A9%E5%AE%B9/
   "v-71a17adf": () => import(/* webpackChunkName: "v-71a17adf" */"D:/pord/bolg/src/.vuepress/.temp/pages/tag/lvm扩容/index.html.js").then(({ data }) => data),
-  // path: /category/docker%E5%AE%89%E8%A3%85nginx%E6%9C%8D%E5%8A%A1%E5%99%A8_%E4%BB%A3%E7%90%86%E8%AE%BF%E9%97%AEminio/
-  "v-194b2e1e": () => import(/* webpackChunkName: "v-194b2e1e" */"D:/pord/bolg/src/.vuepress/.temp/pages/category/docker安装nginx服务器_代理访问minio/index.html.js").then(({ data }) => data),
+  // path: /category/%E7%BC%96%E5%86%99%E5%A4%87%E4%BB%BD%E8%84%9A%E6%9C%AC/
+  "v-ed243858": () => import(/* webpackChunkName: "v-ed243858" */"D:/pord/bolg/src/.vuepress/.temp/pages/category/编写备份脚本/index.html.js").then(({ data }) => data),
   // path: /tag/java%E6%89%B9%E9%87%8F%E6%9F%A5%E8%AF%A2/
   "v-d5bde8c8": () => import(/* webpackChunkName: "v-d5bde8c8" */"D:/pord/bolg/src/.vuepress/.temp/pages/tag/java批量查询/index.html.js").then(({ data }) => data),
+  // path: /category/docker%E5%AE%89%E8%A3%85nginx%E6%9C%8D%E5%8A%A1%E5%99%A8_%E4%BB%A3%E7%90%86%E8%AE%BF%E9%97%AEminio/
+  "v-194b2e1e": () => import(/* webpackChunkName: "v-194b2e1e" */"D:/pord/bolg/src/.vuepress/.temp/pages/category/docker安装nginx服务器_代理访问minio/index.html.js").then(({ data }) => data),
+  // path: /tag/%E6%95%B0%E6%8D%AE%E6%8F%92%E5%85%A5/
+  "v-6f53c2a0": () => import(/* webpackChunkName: "v-6f53c2a0" */"D:/pord/bolg/src/.vuepress/.temp/pages/tag/数据插入/index.html.js").then(({ data }) => data),
   // path: /category/docker%E5%AE%89%E8%A3%85mysql8.0/
   "v-1f7cc7ae": () => import(/* webpackChunkName: "v-1f7cc7ae" */"D:/pord/bolg/src/.vuepress/.temp/pages/category/docker安装mysql8.0/index.html.js").then(({ data }) => data),
   // path: /tag/k8s/
