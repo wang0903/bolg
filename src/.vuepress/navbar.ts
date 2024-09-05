@@ -107,6 +107,11 @@ export default navbar([
             icon: "pen-to-square",
             link: "2",
           },
+          {
+            text: "kubesphere实现流水线部署",
+            icon: "pen-to-square",
+            link: "3",
+          },
         ],
       },
     ],
@@ -160,6 +165,11 @@ export default navbar([
             text: "查出数据库type4类型为0",
             icon: "pen-to-square",
             link: "8",
+          },
+          {
+            text: "Java默认插入子表数据",
+            icon: "pen-to-square",
+            link: "9",
           },
         ],
       },
