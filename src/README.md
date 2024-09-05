@@ -39,5 +39,10 @@ projects:
     desc: Web 前端框架
     link: https://cn.vuejs.org/
 
+  - icon: /assets/icon/Sa-Token.png
+    name: Sa-Token
+    desc: java 权限认证框架
+    link: https://sa-token.cc/
+
 footer: 在你没有成为武林高手之前，请专心练剑。
 
