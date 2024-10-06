@@ -112,6 +112,11 @@ export default navbar([
             icon: "pen-to-square",
             link: "3",
           },
+          {
+            text: "项目实现jenkins+K8S部署",
+            icon: "pen-to-square",
+            link: "4",
+          },
         ],
       },
     ],
