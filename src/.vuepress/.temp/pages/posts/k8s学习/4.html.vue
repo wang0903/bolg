@@ -25,9 +25,9 @@ kk create cluster --with-kubernetes v1.26 --container-manager containerd --with-
   <span class="token key atrule">name</span><span class="token punctuation">:</span> sample
 <span class="token key atrule">spec</span><span class="token punctuation">:</span>
   <span class="token key atrule">hosts</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> <span class="token punctuation">{</span><span class="token key atrule">name</span><span class="token punctuation">:</span> master<span class="token punctuation">,</span> <span class="token key atrule">address</span><span class="token punctuation">:</span> 192.168.200.235<span class="token punctuation">,</span> <span class="token key atrule">internalAddress</span><span class="token punctuation">:</span> 192.168.200.235<span class="token punctuation">,</span> <span class="token key atrule">user</span><span class="token punctuation">:</span> root<span class="token punctuation">,</span> <span class="token key atrule">password</span><span class="token punctuation">:</span> <span class="token string">"62352744aa??aa"</span><span class="token punctuation">}</span>
-  <span class="token punctuation">-</span> <span class="token punctuation">{</span><span class="token key atrule">name</span><span class="token punctuation">:</span> node01<span class="token punctuation">,</span> <span class="token key atrule">address</span><span class="token punctuation">:</span> 192.168.200.236<span class="token punctuation">,</span> <span class="token key atrule">internalAddress</span><span class="token punctuation">:</span> 192.168.200.236<span class="token punctuation">,</span> <span class="token key atrule">user</span><span class="token punctuation">:</span> root<span class="token punctuation">,</span> <span class="token key atrule">password</span><span class="token punctuation">:</span> <span class="token string">"62352744aa??aa"</span><span class="token punctuation">}</span>
-  <span class="token punctuation">-</span> <span class="token punctuation">{</span><span class="token key atrule">name</span><span class="token punctuation">:</span> node02<span class="token punctuation">,</span> <span class="token key atrule">address</span><span class="token punctuation">:</span> 192.168.200.237<span class="token punctuation">,</span> <span class="token key atrule">internalAddress</span><span class="token punctuation">:</span> 192.168.200.237<span class="token punctuation">,</span> <span class="token key atrule">user</span><span class="token punctuation">:</span> root<span class="token punctuation">,</span> <span class="token key atrule">password</span><span class="token punctuation">:</span> <span class="token string">"62352744aa??aa"</span><span class="token punctuation">}</span>
+  <span class="token punctuation">-</span> <span class="token punctuation">{</span><span class="token key atrule">name</span><span class="token punctuation">:</span> master<span class="token punctuation">,</span> <span class="token key atrule">address</span><span class="token punctuation">:</span> 192.168.1.235<span class="token punctuation">,</span> <span class="token key atrule">internalAddress</span><span class="token punctuation">:</span> 192.168.1.235<span class="token punctuation">,</span> <span class="token key atrule">user</span><span class="token punctuation">:</span> root<span class="token punctuation">,</span> <span class="token key atrule">password</span><span class="token punctuation">:</span> <span class="token string">"xxxxx"</span><span class="token punctuation">}</span>
+  <span class="token punctuation">-</span> <span class="token punctuation">{</span><span class="token key atrule">name</span><span class="token punctuation">:</span> node01<span class="token punctuation">,</span> <span class="token key atrule">address</span><span class="token punctuation">:</span> 192.168.1.236<span class="token punctuation">,</span> <span class="token key atrule">internalAddress</span><span class="token punctuation">:</span> 192.168.1.236<span class="token punctuation">,</span> <span class="token key atrule">user</span><span class="token punctuation">:</span> root<span class="token punctuation">,</span> <span class="token key atrule">password</span><span class="token punctuation">:</span> <span class="token string">"xxxxx"</span><span class="token punctuation">}</span>
+  <span class="token punctuation">-</span> <span class="token punctuation">{</span><span class="token key atrule">name</span><span class="token punctuation">:</span> node02<span class="token punctuation">,</span> <span class="token key atrule">address</span><span class="token punctuation">:</span> 192.168.1.237<span class="token punctuation">,</span> <span class="token key atrule">internalAddress</span><span class="token punctuation">:</span> 192.168.1.237<span class="token punctuation">,</span> <span class="token key atrule">user</span><span class="token punctuation">:</span> root<span class="token punctuation">,</span> <span class="token key atrule">password</span><span class="token punctuation">:</span> <span class="token string">"xxxxx"</span><span class="token punctuation">}</span>
   <span class="token key atrule">roleGroups</span><span class="token punctuation">:</span>
     <span class="token key atrule">etcd</span><span class="token punctuation">:</span>
     <span class="token punctuation">-</span> master
@@ -119,9 +119,9 @@ clusterconfiguration.installer.kubesphere.io/ks-installer created
 <span class="token comment">###              Welcome to KubeSphere!           ###</span>
 <span class="token comment">#####################################################</span>
 
-Console: http://192.168.200.239:30880
+Console: http://192.168.1.239:30880
 Account: admin
-Password: P@88w0rd 修改为：TG62352744aa??aa
+Password: P@88w0rd 修改为：xxxxxx
 NOTES：
   <span class="token number">1</span>. After you log into the console, please check the
      monitoring status of <span class="token function">service</span> components <span class="token keyword">in</span>
@@ -162,8 +162,8 @@ Please check the result using the command:
 
     environment <span class="token punctuation">{</span>
         harborUser <span class="token operator">=</span> <span class="token string">'admin'</span>
-        harborPasswd <span class="token operator">=</span> <span class="token string">'TG62352744aa??aa'</span>
-        harborAddress <span class="token operator">=</span> <span class="token string">'192.168.200.239:30002'</span>
+        harborPasswd <span class="token operator">=</span> <span class="token string">'xxxxxx'</span>
+        harborAddress <span class="token operator">=</span> <span class="token string">'192.168.1.239:30002'</span>
         harborRepo <span class="token operator">=</span> <span class="token string">'tgprod'</span>
         kubeNamespace <span class="token operator">=</span> <span class="token string">'tgpord'</span>
         chartName <span class="token operator">=</span> <span class="token string">'tg-server'</span>
@@ -171,7 +171,7 @@ Please check the result using the command:
     stages <span class="token punctuation">{</span>
         <span class="token function">stage</span><span class="token punctuation">(</span><span class="token string">'检出'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             steps <span class="token punctuation">{</span>
-                checkout <span class="token function">scmGit</span><span class="token punctuation">(</span>branches<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>name<span class="token punctuation">:</span> <span class="token string">'${tag}'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> extensions<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> userRemoteConfigs<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>credentialsId<span class="token punctuation">:</span> <span class="token string">'5e3afd73-6581-4e14-8bd4-f17e3f353270'</span><span class="token punctuation">,</span> url<span class="token punctuation">:</span> <span class="token string">'http://192.168.200.232/root/tg.git'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+                checkout <span class="token function">scmGit</span><span class="token punctuation">(</span>branches<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>name<span class="token punctuation">:</span> <span class="token string">'${tag}'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> extensions<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> userRemoteConfigs<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>credentialsId<span class="token punctuation">:</span> <span class="token string">'5e3afd73-6581-4e14-8bd4-f17e3f353270'</span><span class="token punctuation">,</span> url<span class="token punctuation">:</span> <span class="token string">'http://192.168.1.232/root/tg.git'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
             <span class="token punctuation">}</span>
         <span class="token punctuation">}</span>
         <span class="token function">stage</span><span class="token punctuation">(</span><span class="token string">'项目构建'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -253,7 +253,7 @@ Please check the result using the command:
 <div class="language-yaml line-numbers-mode" data-ext="yml"><pre v-pre class="language-yaml"><code><span class="token key atrule">replicaCount</span><span class="token punctuation">:</span> <span class="token number">3</span>  <span class="token comment"># 副本数量，决定了有多少个 Pod 会同时运行该应用</span>
 
 <span class="token key atrule">image</span><span class="token punctuation">:</span>
-  <span class="token key atrule">repository</span><span class="token punctuation">:</span> 192.168.200.239<span class="token punctuation">:</span>30002/tgtestprod/tg<span class="token punctuation">-</span>server  <span class="token comment"># 镜像仓库地址，指定从哪里拉取镜像</span>
+  <span class="token key atrule">repository</span><span class="token punctuation">:</span> 192.168.1.239<span class="token punctuation">:</span>30002/tgtestprod/tg<span class="token punctuation">-</span>server  <span class="token comment"># 镜像仓库地址，指定从哪里拉取镜像</span>
   <span class="token key atrule">pullPolicy</span><span class="token punctuation">:</span> Always  <span class="token comment"># 镜像拉取策略，`Always` 表示每次都会尝试拉取镜像</span>
   <span class="token key atrule">tag</span><span class="token punctuation">:</span> <span class="token string">"latest"</span>  <span class="token comment"># 镜像的标签，默认是 `latest`，可以在部署时通过 --set 覆盖</span>
 
@@ -370,7 +370,7 @@ Please check the result using the command:
 <span class="token comment"># 镜像的配置信息，包括仓库地址、版本标签和拉取策略</span>
 <span class="token key atrule">image</span><span class="token punctuation">:</span>
   <span class="token comment"># 镜像仓库地址</span>
-  <span class="token key atrule">repository</span><span class="token punctuation">:</span> 192.168.200.239<span class="token punctuation">:</span>30002/tgweb/tg<span class="token punctuation">-</span>web
+  <span class="token key atrule">repository</span><span class="token punctuation">:</span> 192.168.1.239<span class="token punctuation">:</span>30002/tgweb/tg<span class="token punctuation">-</span>web
   <span class="token comment"># 镜像标签，这里可以传入变量进行替换</span>
   <span class="token key atrule">tag</span><span class="token punctuation">:</span> <span class="token string">"latest"</span>
   <span class="token comment"># 镜像拉取策略，可以是 Always、IfNotPresent 或 Never</span>
@@ -542,7 +542,7 @@ pipeline <span class="token punctuation">{</span>
         <span class="token comment">//声明全局变量，方便后使用</span>
         harborUser <span class="token operator">=</span> <span class="token string">'admin'</span>
         harborPasswd <span class="token operator">=</span> <span class="token string">'TG6'</span>
-        harborAddress <span class="token operator">=</span> <span class="token string">'192.168.200.239:30002'</span>
+        harborAddress <span class="token operator">=</span> <span class="token string">'192.168.1.239:30002'</span>
         harborRepo <span class="token operator">=</span> <span class="token string">'tgweb'</span>
         environment <span class="token operator">=</span> <span class="token string">'prod'</span>
         kubeNamespace <span class="token operator">=</span> <span class="token string">'tgpord'</span>
@@ -564,7 +564,7 @@ pipeline <span class="token punctuation">{</span>
         <span class="token punctuation">}</span>
         <span class="token function">stage</span><span class="token punctuation">(</span><span class="token string">'检出'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             steps <span class="token punctuation">{</span>
-                checkout <span class="token function">scmGit</span><span class="token punctuation">(</span>branches<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>name<span class="token punctuation">:</span> <span class="token string">'${tag}'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> extensions<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> userRemoteConfigs<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>credentialsId<span class="token punctuation">:</span> <span class="token string">'5e3afd73-6581-4e14-8bd4-f17e3f353270'</span><span class="token punctuation">,</span> url<span class="token punctuation">:</span> <span class="token string">'http://192.168.200.232/root/tg.git'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+                checkout <span class="token function">scmGit</span><span class="token punctuation">(</span>branches<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>name<span class="token punctuation">:</span> <span class="token string">'${tag}'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> extensions<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> userRemoteConfigs<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>credentialsId<span class="token punctuation">:</span> <span class="token string">'5e3afd73-6581-4e14-8bd4-f17e3f353270'</span><span class="token punctuation">,</span> url<span class="token punctuation">:</span> <span class="token string">'http://192.168.1.232/root/tg.git'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
             <span class="token punctuation">}</span>
         <span class="token punctuation">}</span>
 
@@ -911,7 +911,7 @@ buildah --version
 <div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">git</span> config <span class="token parameter variable">--local</span> user.name <span class="token string">"Administrator"</span>
 <span class="token function">git</span> config <span class="token parameter variable">--local</span> user.email <span class="token string">"gitlab_admin_ea50d9@example.com"</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2、创建一个新仓库" tabindex="-1"><a class="header-anchor" href="#_2、创建一个新仓库" aria-hidden="true">#</a> 2、创建一个新仓库</h3>
-<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">git</span> clone http://192.168.200.232/root/tg.git
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">git</span> clone http://192.168.1.22/root/tg.git
 <span class="token builtin class-name">cd</span> tg
 <span class="token function">git</span> switch <span class="token parameter variable">--create</span> main
 <span class="token function">touch</span> README.md
@@ -921,16 +921,364 @@ buildah --version
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_3、推送现有文件夹" tabindex="-1"><a class="header-anchor" href="#_3、推送现有文件夹" aria-hidden="true">#</a> 3、推送现有文件夹</h3>
 <div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token builtin class-name">cd</span> existing_folder
 <span class="token function">git</span> init --initial-branch<span class="token operator">=</span>main
-<span class="token function">git</span> remote <span class="token function">add</span> origin http://192.168.200.232/root/tg.git
+<span class="token function">git</span> remote <span class="token function">add</span> origin http://192.168.1.22/root/tg.git
 <span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
 <span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"Initial commit"</span>
 <span class="token function">git</span> push --set-upstream origin main
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_4、推送现有的-git-仓库" tabindex="-1"><a class="header-anchor" href="#_4、推送现有的-git-仓库" aria-hidden="true">#</a> 4、推送现有的 Git 仓库</h3>
 <div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token builtin class-name">cd</span> existing_repo
 <span class="token function">git</span> remote <span class="token function">rename</span> origin old-origin
-<span class="token function">git</span> remote <span class="token function">add</span> origin http://192.168.200.232/root/tg.git
+<span class="token function">git</span> remote <span class="token function">add</span> origin http://192.168.1.22/root/tg.git
 <span class="token function">git</span> push --set-upstream origin <span class="token parameter variable">--all</span>
 <span class="token function">git</span> push --set-upstream origin <span class="token parameter variable">--tags</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div></template>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="五、docker的方式安装" tabindex="-1"><a class="header-anchor" href="#五、docker的方式安装" aria-hidden="true">#</a> 五、docker的方式安装</h2>
+<h3 id="_5-1、后端自动部署" tabindex="-1"><a class="header-anchor" href="#_5-1、后端自动部署" aria-hidden="true">#</a> 5.1、后端自动部署</h3>
+<p>其他中间件安装还是延用上面</p>
+<h4 id="_5-1-1、流水线代码" tabindex="-1"><a class="header-anchor" href="#_5-1-1、流水线代码" aria-hidden="true">#</a> 5.1.1、流水线代码:</h4>
+<div class="language-groovy line-numbers-mode" data-ext="groovy"><pre v-pre class="language-groovy"><code>pipeline <span class="token punctuation">{</span>
+    agent any
+
+    environment <span class="token punctuation">{</span>
+        <span class="token comment">//声明全局变量，方便后使用</span>
+        harborUser <span class="token operator">=</span> <span class="token string">'admin'</span>
+        harborPasswd <span class="token operator">=</span> <span class="token string">'xxxxxx'</span>
+        harborAddress <span class="token operator">=</span> <span class="token string">'192.168.1.239:30002'</span>
+        harborRepo <span class="token operator">=</span> <span class="token string">'tgdockerprod'</span>
+    <span class="token punctuation">}</span>
+    stages <span class="token punctuation">{</span>
+        <span class="token function">stage</span><span class="token punctuation">(</span><span class="token string">'检出'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            steps <span class="token punctuation">{</span>
+                checkout <span class="token function">scmGit</span><span class="token punctuation">(</span>branches<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>name<span class="token punctuation">:</span> <span class="token string">'${tag}'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> extensions<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> userRemoteConfigs<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>credentialsId<span class="token punctuation">:</span> <span class="token string">'5e3afd73-6581-4e14-8bd4-f17e3f353270'</span><span class="token punctuation">,</span> url<span class="token punctuation">:</span> <span class="token string">'http://192.168.1.22/root/tg.git'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">stage</span><span class="token punctuation">(</span><span class="token string">'项目构建'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            steps <span class="token punctuation">{</span>
+                sh <span class="token string">'/var/jenkins_home/maven-3.9.9/bin/mvn clean package -Dmaven.test.skip=true'</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">stage</span><span class="token punctuation">(</span><span class="token string">'SonarQube代码质量分析'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            steps <span class="token punctuation">{</span>
+                sh <span class="token string">'/var/jenkins_home/sonar-scanner/bin/sonar-scanner  -Dsonar.source=./  -Dsonar.projectname=${JOB_NAME}  -Dsonar.projectKey=${JOB_NAME}  -Dsonar.java.binaries=/var/jenkins_home/workspace/tg-k8s/yudao-server/target  -Dsonar.login=8ee03618a249aa7c14ab664cf85f0e7627256306'</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">stage</span><span class="token punctuation">(</span><span class="token string">'docker镜像构建'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            steps <span class="token punctuation">{</span>
+                sh <span class="token string">'''mv /var/jenkins_home/workspace/tg-docker-prod/yudao-server/target/*.jar ./yudao-server/
+                     docker build -t  tgdockerprod-server:${tag} /var/jenkins_home/workspace/tg-docker-prod/yudao-server'''</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">stage</span><span class="token punctuation">(</span><span class="token string">'推送镜像至镜像仓库'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            steps <span class="token punctuation">{</span>
+                sh <span class="token string">'''docker login -u ${harborUser} -p ${harborPasswd} ${harborAddress}
+                      docker tag tgdockerprod-server:${tag} 192.168.200.239:30002/tgdockerprod/tgdockerprod-server:${tag}
+                      docker push ${harborAddress}/${harborRepo}/tgdockerprod-server:${tag}'''</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">stage</span><span class="token punctuation">(</span><span class="token string">'通知目标服务器部署'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            steps <span class="token punctuation">{</span>
+                <span class="token function">sshPublisher</span><span class="token punctuation">(</span>publishers<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token function">sshPublisherDesc</span><span class="token punctuation">(</span>configName<span class="token punctuation">:</span> <span class="token string">'tgproddocker'</span><span class="token punctuation">,</span> transfers<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token function">sshTransfer</span><span class="token punctuation">(</span>cleanRemote<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> excludes<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span> execCommand<span class="token punctuation">:</span> <span class="token interpolation-string"><span class="token string">"deploy.sh  </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">harborAddress</span></span><span class="token string">  </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">harborRepo</span></span><span class="token string"> tgdockerprod-server </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">tag</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">container_port</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">host_port</span></span><span class="token string">"</span></span><span class="token punctuation">,</span> execTimeout<span class="token punctuation">:</span> <span class="token number">300000</span><span class="token punctuation">,</span> flatten<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> makeEmptyDirs<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> noDefaultExcludes<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> patternSeparator<span class="token punctuation">:</span> <span class="token string">'[, ]+'</span><span class="token punctuation">,</span> remoteDirectory<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span> remoteDirectorySDF<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> removePrefix<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span> sourceFiles<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span> usePromotionTimestamp<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> useWorkspaceInPromotion<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> verbose<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    post <span class="token punctuation">{</span>
+        success <span class="token punctuation">{</span>
+            <span class="token function">dingtalk</span><span class="token punctuation">(</span>
+                    robot<span class="token punctuation">:</span> <span class="token string">'tg-prod-docker'</span><span class="token punctuation">,</span>
+                    type<span class="token punctuation">:</span> <span class="token string">'MARKDOWN'</span><span class="token punctuation">,</span>
+                    title<span class="token punctuation">:</span> <span class="token interpolation-string"><span class="token string">"success: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">JOB_NAME</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">,</span>
+                    text<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token interpolation-string"><span class="token string">"- 成功构建:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">JOB_NAME</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">项目!\n- 版本:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">tag</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">\n- 持续时间:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">currentBuild<span class="token punctuation">.</span>durationString</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">\n- 任务:#</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">JOB_NAME</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">]</span>
+            <span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        failure <span class="token punctuation">{</span>
+            <span class="token function">dingtalk</span><span class="token punctuation">(</span>
+                    robot<span class="token punctuation">:</span> <span class="token string">'tg-prod-docker'</span><span class="token punctuation">,</span>
+                    type<span class="token punctuation">:</span> <span class="token string">'MARKDOWN'</span><span class="token punctuation">,</span>
+                    title<span class="token punctuation">:</span> <span class="token interpolation-string"><span class="token string">"fail: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">JOB_NAME</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">,</span>
+                    text<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token interpolation-string"><span class="token string">"- 失败构建:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">JOB_NAME</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">项目!\n- 版本:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">tag</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">\n- 持续时间:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">currentBuild<span class="token punctuation">.</span>durationString</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">\n- 任务:#</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">JOB_NAME</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">]</span>
+            <span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_5-1-2、部署脚本代码" tabindex="-1"><a class="header-anchor" href="#_5-1-2、部署脚本代码" aria-hidden="true">#</a> 5.1.2、部署脚本代码</h4>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token assign-left variable">horbar_addr</span><span class="token operator">=</span><span class="token variable">$1</span>  <span class="token comment">#地址</span>
+<span class="token assign-left variable">horbar_hzwxtest</span><span class="token operator">=</span><span class="token variable">$2</span>  <span class="token comment">#仓库名称</span>
+<span class="token assign-left variable">project</span><span class="token operator">=</span><span class="token variable">$3</span>      <span class="token comment">#工程名称</span>
+<span class="token assign-left variable">version</span><span class="token operator">=</span><span class="token variable">$4</span>      <span class="token comment">#版本</span>
+<span class="token assign-left variable">container_port</span><span class="token operator">=</span><span class="token variable">$5</span> <span class="token comment">#容器端口</span>
+<span class="token assign-left variable">host_port</span><span class="token operator">=</span><span class="token variable">$6</span> <span class="token comment">#宿主机端口</span>
+<span class="token assign-left variable">imageName</span><span class="token operator">=</span><span class="token variable">$horbar_addr</span>/<span class="token variable">$horbar_hzwxtest</span>/<span class="token variable">$project</span><span class="token builtin class-name">:</span><span class="token variable">$version</span>
+
+<span class="token builtin class-name">echo</span> <span class="token variable">$imageName</span>
+
+<span class="token assign-left variable">containerId</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">docker</span> <span class="token function">ps</span> <span class="token parameter variable">-a</span> <span class="token operator">|</span> <span class="token function">grep</span> $<span class="token punctuation">{</span>project<span class="token punctuation">}</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $1}'</span><span class="token variable">`</span></span>
+
+<span class="token builtin class-name">echo</span> <span class="token variable">$containerId</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$containerId</span>"</span> <span class="token operator">!=</span> <span class="token string">""</span> <span class="token punctuation">]</span> <span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token function">docker</span> stop <span class="token variable">$containerId</span>
+    <span class="token function">docker</span> <span class="token function">rm</span> <span class="token variable">$containerId</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"容器删除成功！！"</span>
+<span class="token keyword">fi</span>
+<span class="token assign-left variable">imageId</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">docker</span> images <span class="token operator">|</span> <span class="token function">grep</span> $<span class="token punctuation">{</span>project<span class="token punctuation">}</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $2}'</span><span class="token variable">`</span></span>
+
+<span class="token builtin class-name">echo</span> <span class="token variable">$imageId</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$imageId</span>"</span> <span class="token operator">=~</span> <span class="token string">"<span class="token variable">$version</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token function">docker</span> rmi <span class="token parameter variable">-f</span> <span class="token variable">$imageName</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"镜像删除成功！！"</span>
+<span class="token keyword">fi</span>
+<span class="token function">docker</span> login <span class="token parameter variable">-u</span> admin <span class="token parameter variable">-p</span> TG62352744aa??aa <span class="token variable">$horbar_addr</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"登录成功！！"</span>
+
+<span class="token comment">#docker pull 192.168.200.239:30002/hzwx/mytest2:v5.0.0</span>
+<span class="token function">docker</span> pull <span class="token variable">$imageName</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">"镜像拉取成功！！"</span>
+
+<span class="token comment">## 第二步：启动新的 yudao-server 容器 \</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"开始启动 yudao-server 容器"</span>
+<span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token punctuation">\</span>
+<span class="token parameter variable">--name</span> <span class="token variable">$project</span> <span class="token punctuation">\</span>
+<span class="token parameter variable">-p</span> <span class="token variable">$host_port</span><span class="token builtin class-name">:</span><span class="token variable">$container_port</span> <span class="token punctuation">\</span>
+<span class="token parameter variable">-e</span> <span class="token string">"SPRING_PROFILES_ACTIVE=dev"</span> <span class="token punctuation">\</span>
+<span class="token parameter variable">-v</span> /root/work/projects/yudao-server:/root/logs/ <span class="token punctuation">\</span>
+<span class="token variable">$imageName</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"正在启动 yudao-server 容器中，需要等待 60 秒左右"</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_5-1-3、docker打包" tabindex="-1"><a class="header-anchor" href="#_5-1-3、docker打包" aria-hidden="true">#</a> 5.1.3、docker打包</h4>
+<div class="language-docker line-numbers-mode" data-ext="docker"><pre v-pre class="language-docker"><code><span class="token comment">## AdoptOpenJDK 停止发布 OpenJDK 二进制，而 Eclipse Temurin 是它的延伸，提供更好的稳定性</span>
+<span class="token comment">## 感谢复旦核博士的建议！灰子哥，牛皮！</span>
+<span class="token instruction"><span class="token keyword">FROM</span> eclipse-temurin:21-jre</span>
+
+<span class="token comment">## 创建目录，并使用它作为工作目录</span>
+<span class="token instruction"><span class="token keyword">RUN</span> mkdir -p /yudao-server</span>
+<span class="token instruction"><span class="token keyword">WORKDIR</span> /yudao-server</span>
+<span class="token comment">## 将后端项目的 Jar 文件，复制到镜像中</span>
+<span class="token instruction"><span class="token keyword">COPY</span> yudao-server.jar app.jar</span>
+
+<span class="token comment">## 设置 TZ 时区</span>
+<span class="token instruction"><span class="token keyword">ENV</span> TZ=Asia/Shanghai</span>
+<span class="token comment">## 设置 JAVA_OPTS 环境变量，可通过 docker run -e "JAVA_OPTS=" 进行覆盖</span>
+<span class="token instruction"><span class="token keyword">ENV</span> JAVA_OPTS=<span class="token string">"-Xms4096m -Xmx4096m -Djava.security.egd=file:/dev/./urandom"</span></span>
+
+<span class="token comment">## 应用参数</span>
+<span class="token instruction"><span class="token keyword">ENV</span> ARGS=<span class="token string">""</span></span>
+
+<span class="token comment">## 暴露后端项目的 48080 端口</span>
+<span class="token instruction"><span class="token keyword">EXPOSE</span> 48080</span>
+
+<span class="token comment">## 启动后端项目</span>
+<span class="token instruction"><span class="token keyword">CMD</span> java <span class="token variable">${JAVA_OPTS}</span> -jar app.jar <span class="token variable">$ARGS</span></span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_5-2、前端自动部署" tabindex="-1"><a class="header-anchor" href="#_5-2、前端自动部署" aria-hidden="true">#</a> 5.2、前端自动部署</h3>
+<h4 id="_5-2-1、流水线代码" tabindex="-1"><a class="header-anchor" href="#_5-2-1、流水线代码" aria-hidden="true">#</a> 5.2.1、流水线代码</h4>
+<div class="language-groovy line-numbers-mode" data-ext="groovy"><pre v-pre class="language-groovy"><code><span class="token shebang comment">#!groovy</span>
+pipeline <span class="token punctuation">{</span>
+    agent any
+    tools <span class="token punctuation">{</span> nodejs <span class="token interpolation-string"><span class="token string">"node-v20.17.0"</span></span> <span class="token punctuation">}</span>
+
+    environment <span class="token punctuation">{</span>
+        PROJECT_DIR <span class="token operator">=</span> <span class="token string">'/var/jenkins_home/workspace/tg-docker-web/yudao-ui/yudao-ui-admin-vue3'</span>
+        <span class="token comment">//声明全局变量，方便后使用</span>
+        harborUser <span class="token operator">=</span> <span class="token string">'admin'</span>
+        harborPasswd <span class="token operator">=</span> <span class="token string">'xxxxx'</span>
+        harborAddress <span class="token operator">=</span> <span class="token string">'192.168.1.239:30002'</span>
+        harborRepo <span class="token operator">=</span> <span class="token string">'tgdockerweb'</span>
+    <span class="token punctuation">}</span>
+
+    stages <span class="token punctuation">{</span>
+        <span class="token function">stage</span><span class="token punctuation">(</span><span class="token string">'启用pnpm'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            steps <span class="token punctuation">{</span>
+                sh <span class="token string">'''
+                corepack enable pnpm
+            '''</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">stage</span><span class="token punctuation">(</span><span class="token string">'设置淘宝镜像'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            steps <span class="token punctuation">{</span>
+                sh <span class="token string">'''
+                pnpm config set registry https://registry.npmmirror.com'''</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">stage</span><span class="token punctuation">(</span><span class="token string">'检出'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            steps <span class="token punctuation">{</span>
+                checkout <span class="token function">scmGit</span><span class="token punctuation">(</span>branches<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>name<span class="token punctuation">:</span> <span class="token string">'${tag}'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> extensions<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> userRemoteConfigs<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>credentialsId<span class="token punctuation">:</span> <span class="token string">'5e3afd73-6581-4e14-8bd4-f17e3f353270'</span><span class="token punctuation">,</span> url<span class="token punctuation">:</span> <span class="token string">'http://192.168.1.22/root/tg.git'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">stage</span><span class="token punctuation">(</span><span class="token string">'构建'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            steps <span class="token punctuation">{</span>
+                sh <span class="token string">'pnpm  --prefix '</span> <span class="token operator">+</span> <span class="token interpolation-string"><span class="token string">"</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">env<span class="token punctuation">.</span>PROJECT_DIR</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"</span></span> <span class="token operator">+</span> <span class="token string">' install'</span>
+                sh <span class="token string">'pnpm  --prefix '</span> <span class="token operator">+</span> <span class="token interpolation-string"><span class="token string">"</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">env<span class="token punctuation">.</span>PROJECT_DIR</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"</span></span> <span class="token operator">+</span> <span class="token string">' run build:prod'</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">stage</span><span class="token punctuation">(</span><span class="token string">'通过docker制作自定义镜像'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            steps <span class="token punctuation">{</span>
+                sh <span class="token string">'''rm -rf /var/jenkins_home/workspace/tg-docker-web/yudao-ui/yudao-ui-admin-vue3/devops/dist-prod
+                     mv /var/jenkins_home/workspace/tg-docker-web/yudao-ui/yudao-ui-admin-vue3/dist-prod  /var/jenkins_home/workspace/tg-docker-web/yudao-ui/yudao-ui-admin-vue3/devops/
+                     docker build -t  dist-web-docker:${tag} /var/jenkins_home/workspace/tg-docker-web/yudao-ui/yudao-ui-admin-vue3/devops'''</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">stage</span><span class="token punctuation">(</span><span class="token string">'将自定义镜像推送到Harbor仓库'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            steps <span class="token punctuation">{</span>
+                sh <span class="token string">'''docker login -u ${harborUser} -p ${harborPasswd} ${harborAddress}
+                   docker tag dist-web-docker:${tag} 192.168.200.239:30002/tgdockerweb/dist-web-docker:${tag}
+                   docker push ${harborAddress}/${harborRepo}/dist-web-docker:${tag}'''</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">stage</span><span class="token punctuation">(</span><span class="token string">'通知目标服务器拉取并且部署容器'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            steps <span class="token punctuation">{</span>
+                <span class="token function">sshPublisher</span><span class="token punctuation">(</span>publishers<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token function">sshPublisherDesc</span><span class="token punctuation">(</span>configName<span class="token punctuation">:</span> <span class="token string">'tgwebdocker'</span><span class="token punctuation">,</span> transfers<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token function">sshTransfer</span><span class="token punctuation">(</span>cleanRemote<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> excludes<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span> execCommand<span class="token punctuation">:</span> <span class="token interpolation-string"><span class="token string">"deploy.sh </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">harborAddress</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">harborRepo</span></span><span class="token string"> dist-web-docker  </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">tag</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">container_port</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">host_port</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">http_container_port</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">http_host_port</span></span><span class="token string">"</span></span><span class="token punctuation">,</span> execTimeout<span class="token punctuation">:</span> <span class="token number">120000</span><span class="token punctuation">,</span> flatten<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> makeEmptyDirs<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> noDefaultExcludes<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> patternSeparator<span class="token punctuation">:</span> <span class="token string">'[, ]+'</span><span class="token punctuation">,</span> remoteDirectory<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span> remoteDirectorySDF<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> removePrefix<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span> sourceFiles<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span> usePromotionTimestamp<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> useWorkspaceInPromotion<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> verbose<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    post <span class="token punctuation">{</span>
+        success <span class="token punctuation">{</span>
+            <span class="token function">dingtalk</span><span class="token punctuation">(</span>
+                    robot<span class="token punctuation">:</span> <span class="token string">'tg-web-docker'</span><span class="token punctuation">,</span>
+                    type<span class="token punctuation">:</span> <span class="token string">'MARKDOWN'</span><span class="token punctuation">,</span>
+                    title<span class="token punctuation">:</span> <span class="token interpolation-string"><span class="token string">"success: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">JOB_NAME</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">,</span>
+                    text<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token interpolation-string"><span class="token string">"- 成功构建:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">JOB_NAME</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">项目!\n- 版本:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">tag</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">\n- 持续时间:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">currentBuild<span class="token punctuation">.</span>durationString</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">\n- 任务:#</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">JOB_NAME</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">]</span>
+            <span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        failure <span class="token punctuation">{</span>
+            <span class="token function">dingtalk</span><span class="token punctuation">(</span>
+                    robot<span class="token punctuation">:</span> <span class="token string">'tg-web-docker'</span><span class="token punctuation">,</span>
+                    type<span class="token punctuation">:</span> <span class="token string">'MARKDOWN'</span><span class="token punctuation">,</span>
+                    title<span class="token punctuation">:</span> <span class="token interpolation-string"><span class="token string">"fail: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">JOB_NAME</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">,</span>
+                    text<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token interpolation-string"><span class="token string">"- 失败构建:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">JOB_NAME</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">项目!\n- 版本:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">tag</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">\n- 持续时间:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">currentBuild<span class="token punctuation">.</span>durationString</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">\n- 任务:#</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">JOB_NAME</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">]</span>
+            <span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_5-2-2、部署脚本" tabindex="-1"><a class="header-anchor" href="#_5-2-2、部署脚本" aria-hidden="true">#</a> 5.2.2、部署脚本</h4>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token assign-left variable">horbar_addr</span><span class="token operator">=</span><span class="token variable">$1</span>  <span class="token comment">#地址</span>
+<span class="token assign-left variable">horbar_hzwxtest</span><span class="token operator">=</span><span class="token variable">$2</span>  <span class="token comment">#仓库名称</span>
+<span class="token assign-left variable">project</span><span class="token operator">=</span><span class="token variable">$3</span>      <span class="token comment">#工程名称</span>
+<span class="token assign-left variable">version</span><span class="token operator">=</span><span class="token variable">$4</span>      <span class="token comment">#版本</span>
+<span class="token assign-left variable">container_port</span><span class="token operator">=</span><span class="token variable">$5</span> <span class="token comment">#容器端口</span>
+<span class="token assign-left variable">host_port</span><span class="token operator">=</span><span class="token variable">$6</span> <span class="token comment">#宿主机端口</span>
+<span class="token assign-left variable">http_container_port</span><span class="token operator">=</span><span class="token variable">$7</span> <span class="token comment">#http容器端口</span>
+<span class="token assign-left variable">http_host_port</span><span class="token operator">=</span><span class="token variable">$8</span> <span class="token comment">#http宿主机端口</span>
+<span class="token assign-left variable">imageName</span><span class="token operator">=</span><span class="token variable">$horbar_addr</span>/<span class="token variable">$horbar_hzwxtest</span>/<span class="token variable">$project</span><span class="token builtin class-name">:</span><span class="token variable">$version</span>
+
+<span class="token builtin class-name">echo</span> <span class="token variable">$imageName</span>
+
+<span class="token assign-left variable">containerId</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">docker</span> <span class="token function">ps</span> <span class="token parameter variable">-a</span> <span class="token operator">|</span> <span class="token function">grep</span> $<span class="token punctuation">{</span>project<span class="token punctuation">}</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $1}'</span><span class="token variable">`</span></span>
+
+<span class="token builtin class-name">echo</span> <span class="token variable">$containerId</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$containerId</span>"</span> <span class="token operator">!=</span> <span class="token string">""</span> <span class="token punctuation">]</span> <span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token function">docker</span> stop <span class="token variable">$containerId</span>
+    <span class="token function">docker</span> <span class="token function">rm</span> <span class="token variable">$containerId</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"容器删除成功！！"</span>
+<span class="token keyword">fi</span>
+<span class="token assign-left variable">imageId</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">docker</span> images <span class="token operator">|</span> <span class="token function">grep</span> $<span class="token punctuation">{</span>project<span class="token punctuation">}</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $2}'</span><span class="token variable">`</span></span>
+
+<span class="token builtin class-name">echo</span> <span class="token variable">$imageId</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$imageId</span>"</span> <span class="token operator">=~</span> <span class="token string">"<span class="token variable">$version</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token function">docker</span> rmi <span class="token parameter variable">-f</span> <span class="token variable">$imageName</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"镜像删除成功！！"</span>
+<span class="token keyword">fi</span>
+<span class="token function">docker</span> login <span class="token parameter variable">-u</span> admin <span class="token parameter variable">-p</span> 62352744AA??aa <span class="token variable">$horbar_addr</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"登录成功！！"</span>
+
+<span class="token comment">#docker pull 镜像地址</span>
+<span class="token function">docker</span> pull <span class="token variable">$imageName</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">"镜像拉取成功！！"</span>
+
+<span class="token comment">## 第二步：启动新的 前端 容器 \</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"开始启动 前端 容器"</span>
+<span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token punctuation">\</span>
+<span class="token parameter variable">--name</span> <span class="token variable">$project</span> <span class="token punctuation">\</span>
+<span class="token parameter variable">-p</span> <span class="token variable">$host_port</span><span class="token builtin class-name">:</span><span class="token variable">$container_port</span> <span class="token punctuation">\</span>
+<span class="token parameter variable">-p</span> <span class="token variable">$http_host_port</span><span class="token builtin class-name">:</span><span class="token variable">$http_container_port</span> <span class="token punctuation">\</span>
+<span class="token parameter variable">-v</span> /home/tg/nginx/logs:/var/log/nginx <span class="token punctuation">\</span>
+<span class="token parameter variable">-v</span> /home/tg/nginx/cert:/etc/nginx/cert <span class="token punctuation">\</span>
+<span class="token variable">$imageName</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"正在启动 前端 容器中，需要等待 60 秒左右"</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_5-2-3、打包镜像" tabindex="-1"><a class="header-anchor" href="#_5-2-3、打包镜像" aria-hidden="true">#</a> 5.2.3、打包镜像</h4>
+<div class="language-docker line-numbers-mode" data-ext="docker"><pre v-pre class="language-docker"><code><span class="token comment">#拉取nginx镜像</span>
+<span class="token instruction"><span class="token keyword">FROM</span> 	nginx:latest</span>
+<span class="token comment">#文件维护者</span>
+<span class="token instruction"><span class="token keyword">LABEL</span> authors=<span class="token string">"wangbinggui"</span></span>
+
+<span class="token comment"># 删除容器内的 nginx.conf 文件</span>
+<span class="token instruction"><span class="token keyword">RUN</span> rm /etc/nginx/nginx.conf</span>
+
+<span class="token comment"># 将本地的 nginx.conf 文件复制到容器中</span>
+<span class="token instruction"><span class="token keyword">COPY</span> nginx.conf /etc/nginx/nginx.conf</span>
+
+<span class="token comment">#将构建好的项目文件复制到nginx目录下</span>
+<span class="token instruction"><span class="token keyword">COPY</span> dist-prod /usr/share/nginx/html/</span>
+
+<span class="token comment">#将nginx本地文件替换镜像里面的配置文件</span>
+<span class="token instruction"><span class="token keyword">COPY</span> tg-docker-web.conf  /etc/nginx/conf.d/</span>
+
+<span class="token comment">#将认证文件复制到nginx /etc/nginx/cert</span>
+<span class="token instruction"><span class="token keyword">COPY</span> xxxxxx.com.crt  /etc/nginx/cert/</span>
+
+<span class="token comment">#将秘钥文件复制到nginx /etc/nginx/cert</span>
+<span class="token instruction"><span class="token keyword">COPY</span> SSL.KEY  /etc/nginx/cert/</span>
+
+<span class="token comment"># 运行 nginx，使用前台模式，不要使用守护进程模式</span>
+<span class="token instruction"><span class="token keyword">CMD</span> [<span class="token string">"nginx"</span>, <span class="token string">"-g"</span>, <span class="token string">"daemon off;"</span>]</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_5-2-4、nginx配置" tabindex="-1"><a class="header-anchor" href="#_5-2-4、nginx配置" aria-hidden="true">#</a> 5.2.4、nginx配置</h4>
+<div class="language-nginx line-numbers-mode" data-ext="nginx"><pre v-pre class="language-nginx"><code><span class="token comment">#监听80端口</span>
+<span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+  <span class="token directive"><span class="token keyword">listen</span> <span class="token number">80</span></span><span class="token punctuation">;</span>
+  <span class="token directive"><span class="token keyword">server_name</span> xxx.xxxx.com</span><span class="token punctuation">;</span>
+
+  <span class="token directive"><span class="token keyword">location</span> /</span> <span class="token punctuation">{</span>
+    <span class="token directive"><span class="token keyword">return</span> <span class="token number">301</span> https://<span class="token variable">$server_name</span><span class="token variable">$request_uri</span></span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+  <span class="token directive"><span class="token keyword">listen</span>       <span class="token number">443</span> ssl</span><span class="token punctuation">;</span>
+  <span class="token directive"><span class="token keyword">server_name</span>  xxx.xxxx.com</span><span class="token punctuation">;</span> <span class="token comment">## 重要！！！修改成你的外网 IP/域名</span>
+
+  <span class="token comment">#证书路径</span>
+  <span class="token directive"><span class="token keyword">ssl_certificate</span>  /etc/nginx/cert/_.dingshenggroup.com.crt</span><span class="token punctuation">;</span>
+  <span class="token comment">#SSL私钥文件的路径</span>
+  <span class="token directive"><span class="token keyword">ssl_certificate_key</span>  /etc/nginx/cert/SSL.KEY</span><span class="token punctuation">;</span>
+
+  <span class="token comment"># SSL参数，根据您的需求进行配置</span>
+  <span class="token directive"><span class="token keyword">ssl_protocols</span> TLSv1.1 TLSv1.2 TLSv1.3</span><span class="token punctuation">;</span><span class="token comment">#SSL版本，一般都是用新版本</span>
+  <span class="token directive"><span class="token keyword">ssl_ciphers</span> <span class="token string">'TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:ECDHE-RSA-AES128-GCM-SHA256'</span></span><span class="token punctuation">;</span>
+  <span class="token directive"><span class="token keyword">ssl_prefer_server_ciphers</span> <span class="token boolean">off</span></span><span class="token punctuation">;</span>
+
+  <span class="token comment"># 配置SSL会话缓存以提高性能</span>
+  <span class="token directive"><span class="token keyword">ssl_session_cache</span> shared:SSL:10m</span><span class="token punctuation">;</span>
+  <span class="token directive"><span class="token keyword">ssl_session_timeout</span> <span class="token number">10m</span></span><span class="token punctuation">;</span>
+
+  <span class="token directive"><span class="token keyword">location</span> /</span> <span class="token punctuation">{</span> <span class="token comment">## 前端项目</span>
+    <span class="token directive"><span class="token keyword">root</span>   /usr/share/nginx/html</span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">index</span>  index.html index.htm</span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">try_files</span> <span class="token variable">$uri</span> <span class="token variable">$uri</span>/ /index.html</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token directive"><span class="token keyword">location</span> /admin-api/</span> <span class="token punctuation">{</span> <span class="token comment">## 后端项目 - 管理后台</span>
+    <span class="token directive"><span class="token keyword">proxy_pass</span> http://localhost:48080/admin-api/</span><span class="token punctuation">;</span> <span class="token comment">## 重要！！！proxy_pass 需要设置为后端项目所在服务器的 IP</span>
+    <span class="token directive"><span class="token keyword">proxy_set_header</span> Host <span class="token variable">$http_host</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">proxy_set_header</span> X-Real-IP <span class="token variable">$remote_addr</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">proxy_set_header</span> REMOTE-HOST <span class="token variable">$remote_addr</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">proxy_set_header</span> X-Forwarded-For <span class="token variable">$proxy_add_x_forwarded_for</span></span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token directive"><span class="token keyword">location</span> /app-api/</span> <span class="token punctuation">{</span> <span class="token comment">## 后端项目 - 用户 App</span>
+    <span class="token directive"><span class="token keyword">proxy_pass</span> http://localhost:48080/app-api/</span><span class="token punctuation">;</span> <span class="token comment">## 重要！！！proxy_pass 需要设置为后端项目所在服务器的 IP</span>
+    <span class="token directive"><span class="token keyword">proxy_set_header</span> Host <span class="token variable">$http_host</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">proxy_set_header</span> X-Real-IP <span class="token variable">$remote_addr</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">proxy_set_header</span> REMOTE-HOST <span class="token variable">$remote_addr</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">proxy_set_header</span> X-Forwarded-For <span class="token variable">$proxy_add_x_forwarded_for</span></span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div></template>
 
 
