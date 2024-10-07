@@ -90,6 +90,11 @@ export default navbar([
             icon: "pen-to-square",
             link: "10",
           },
+          {
+            text: "weave和xxl-job-admin安装与使用",
+            icon: "pen-to-square",
+            link: "11",
+          },
         ],
       },
       {
