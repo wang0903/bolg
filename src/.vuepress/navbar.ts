@@ -181,6 +181,11 @@ export default navbar([
             icon: "pen-to-square",
             link: "9",
           },
+          {
+            text: "根据ID批量修改状态",
+            icon: "pen-to-square",
+            link: "10",
+          },
         ],
       },
     ],
