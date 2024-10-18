@@ -189,7 +189,7 @@ export default navbar([
           {
             text: "根据字符串字段批量修改状态",
             icon: "pen-to-square",
-            link: "10",
+            link: "11",
           },
         ],
       },
