@@ -33,6 +33,11 @@ export default navbar([
             icon: "pen-to-square",
             link: "4",
           },
+          {
+            text: "Linux自动删除docker镜像",
+            icon: "pen-to-square",
+            link: "5",
+          },
         ],
       },
       {

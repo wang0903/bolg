@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-34fd05f6\",\"path\":\"/posts/linux%E8%BF%90%E7%BB%B4/5.html\",\"title\":\"自动删除镜像步骤\",\"lang\":\"zh-CN\",\"frontmatter\":{\"icon\":\"pen-to-square\",\"date\":\"2025-01-04T00:00:00.000Z\",\"category\":[\"Linux自动删除镜像\"],\"tag\":[\"Linux自动删除镜像de\",\"Ubuntu22.04\",\"Linux\"],\"star\":true,\"sticky\":true,\"description\":\"自动删除镜像步骤 1、创建脚本文件 sudo vim cleanup_images.sh\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://github.com/posts/linux%E8%BF%90%E7%BB%B4/5.html\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"自动删除镜像步骤\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"自动删除镜像步骤 1、创建脚本文件 sudo vim cleanup_images.sh\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"property\":\"article:author\",\"content\":\"小辣椒\"}],[\"meta\",{\"property\":\"article:tag\",\"content\":\"Linux自动删除镜像de\"}],[\"meta\",{\"property\":\"article:tag\",\"content\":\"Ubuntu22.04\"}],[\"meta\",{\"property\":\"article:tag\",\"content\":\"Linux\"}],[\"meta\",{\"property\":\"article:published_time\",\"content\":\"2025-01-04T00:00:00.000Z\"}],[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"自动删除镜像步骤\\\",\\\"image\\\":[\\\"\\\"],\\\"datePublished\\\":\\\"2025-01-04T00:00:00.000Z\\\",\\\"dateModified\\\":null,\\\"author\\\":[{\\\"@type\\\":\\\"Person\\\",\\\"name\\\":\\\"小辣椒\\\",\\\"url\\\":\\\"https://mister-hope.com\\\"}]}\"]]},\"headers\":[{\"level\":2,\"title\":\"1、创建脚本文件\",\"slug\":\"_1、创建脚本文件\",\"link\":\"#_1、创建脚本文件\",\"children\":[]},{\"level\":2,\"title\":\"脚本代码\",\"slug\":\"脚本代码\",\"link\":\"#脚本代码\",\"children\":[]},{\"level\":2,\"title\":\"3、给运行权限\",\"slug\":\"_3、给运行权限\",\"link\":\"#_3、给运行权限\",\"children\":[]},{\"level\":2,\"title\":\"4、自动删除\",\"slug\":\"_4、自动删除\",\"link\":\"#_4、自动删除\",\"children\":[]},{\"level\":2,\"title\":\"5、添加删除路径\",\"slug\":\"_5、添加删除路径\",\"link\":\"#_5、添加删除路径\",\"children\":[]}],\"readingTime\":{\"minutes\":0.81,\"words\":242},\"filePathRelative\":\"posts/linux运维/5.md\",\"localizedDate\":\"2025年1月4日\",\"excerpt\":\"<h1> 自动删除镜像步骤</h1>\\n<h2> 1、创建脚本文件</h2>\\n<div class=\\\"language-bash line-numbers-mode\\\" data-ext=\\\"sh\\\"><pre class=\\\"language-bash\\\"><code><span class=\\\"token function\\\">sudo</span> <span class=\\\"token function\\\">vim</span> cleanup_images.sh\\n</code></pre><div class=\\\"line-numbers\\\" aria-hidden=\\\"true\\\"><div class=\\\"line-number\\\"></div></div></div>\",\"autoDesc\":true}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}
