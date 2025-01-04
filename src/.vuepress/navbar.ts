@@ -127,6 +127,11 @@ export default navbar([
             icon: "pen-to-square",
             link: "4",
           },
+          {
+            text: "k8s安装kube-prometheus-stack",
+            icon: "pen-to-square",
+            link: "5",
+          },
         ],
       },
     ],
