@@ -38,6 +38,16 @@ export default navbar([
             icon: "pen-to-square",
             link: "5",
           },
+          {
+            text: "Linux运维日常记录",
+            icon: "pen-to-square",
+            link: "6",
+          },
+          {
+            text: "rsync备份数据库",
+            icon: "pen-to-square",
+            link: "7",
+          },
         ],
       },
       {
