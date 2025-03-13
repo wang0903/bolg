@@ -216,6 +216,11 @@ export default navbar([
             icon: "pen-to-square",
             link: "12",
           },
+          {
+            text: "EasyExce的LocalTime、LocalDate和Timestamp转换器",
+            icon: "pen-to-square",
+            link: "13",
+          },
         ],
       },
     ],
