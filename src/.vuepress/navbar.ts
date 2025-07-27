@@ -226,6 +226,11 @@ export default navbar([
             icon: "pen-to-square",
             link: "14",
           },
+          {
+            text: "前端默认时间查询,后端默认时间导出",
+            icon: "pen-to-square",
+            link: "15",
+          },
         ],
       },
     ],
