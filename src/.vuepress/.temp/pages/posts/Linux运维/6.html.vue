@@ -1,0 +1,8 @@
+<template><div><h1 id="linux运维日常记录" tabindex="-1"><a class="header-anchor" href="#linux运维日常记录" aria-hidden="true">#</a> Linux运维日常记录</h1>
+<h2 id="_1、查看当前目录下最大的文件或目录" tabindex="-1"><a class="header-anchor" href="#_1、查看当前目录下最大的文件或目录" aria-hidden="true">#</a> 1、查看当前目录下最大的文件或目录：</h2>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">du</span> <span class="token parameter variable">-ah</span> / <span class="token operator">|</span> <span class="token function">sort</span> <span class="token parameter variable">-rh</span> <span class="token operator">|</span> <span class="token function">head</span> <span class="token parameter variable">-n</span> <span class="token number">20</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="删除文件内容-docker日志" tabindex="-1"><a class="header-anchor" href="#删除文件内容-docker日志" aria-hidden="true">#</a> 删除文件内容(docker日志)</h2>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> truncate <span class="token parameter variable">-s</span> <span class="token number">0</span> /var/lib/docker/containers/95c41359ca07c1aa9ac30d974b6cce5b530dbc9a5cb6734173510d4d69c6ffa7/95c41359ca07c1aa9ac30d974b6cce5b530dbc9a5cb6734173510d4d69c6ffa7-json.log
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></div></template>
+
+

@@ -179,7 +179,20 @@ Command <span class="token punctuation">(</span>m <span class="token keyword">fo
 The partition table has been altered.
 Calling ioctl<span class="token punctuation">(</span><span class="token punctuation">)</span> to re-read partition table.
 Syncing disks.
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="格式化磁盘" tabindex="-1"><a class="header-anchor" href="#格式化磁盘" aria-hidden="true">#</a> 格式化磁盘</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="大于2t创建方法如下" tabindex="-1"><a class="header-anchor" href="#大于2t创建方法如下" aria-hidden="true">#</a> 大于2T创建方法如下</h3>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token comment"># 创建</span>
+<span class="token function">sudo</span> <span class="token function">parted</span> /dev/sdb
+
+<span class="token function">rm</span> <span class="token number">1</span>             <span class="token comment"># 删除分区 1（即 /dev/sdb1）</span>
+mklabel gpt      <span class="token comment"># 创建 GPT 分区表（⚠️ 会清空所有分区）</span>
+mkpart primary ext4 <span class="token number">0</span>% <span class="token number">100</span>%   <span class="token comment"># 创建整个磁盘分区</span>
+quit <span class="token comment">#退出</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在交互界面中输入：</p>
+<p>d → 选择要删除的分区编号（如 1）</p>
+<p>o → 创建新的 GPT 分区表（会提示确认）</p>
+<p>n → 创建新分区</p>
+<p>w → 写入更改并退出</p>
+<h3 id="格式化磁盘" tabindex="-1"><a class="header-anchor" href="#格式化磁盘" aria-hidden="true">#</a> 格式化磁盘</h3>
 <ul>
 <li>查看分区</li>
 </ul>
@@ -201,6 +214,10 @@ Disk /dev/mapper/ubuntu--vg-ubuntu--lv: <span class="token number">19</span> GiB
 </ul>
 <div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">mkfs</span> <span class="token parameter variable">-t</span> ext4 /dev/sdb1
 
+<span class="token comment">#大于两个T时，使用以下命令</span>
+
+<span class="token function">sudo</span> gdisk /dev/sdb1
+
 <span class="token comment"># 输出如下</span>
 <span class="token function">mke2fs</span> <span class="token number">1.44</span>.1 <span class="token punctuation">(</span><span class="token number">24</span>-Mar-2018<span class="token punctuation">)</span>
 Creating filesystem with <span class="token number">5242624</span> 4k blocks and <span class="token number">1310720</span> inodes
@@ -213,7 +230,7 @@ Allocating group tables: <span class="token keyword">done</span>
 Writing inode tables: <span class="token keyword">done</span>                            
 Creating journal <span class="token punctuation">(</span><span class="token number">32768</span> blocks<span class="token punctuation">)</span>: <span class="token keyword">done</span>
 Writing superblocks and filesystem accounting information: <span class="token keyword">done</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="创建-pv" tabindex="-1"><a class="header-anchor" href="#创建-pv" aria-hidden="true">#</a> 创建 PV</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="创建-pv" tabindex="-1"><a class="header-anchor" href="#创建-pv" aria-hidden="true">#</a> 创建 PV</h3>
 <div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code>pvcreate /dev/sdb1
 
 <span class="token comment"># 输出如下</span>
@@ -360,6 +377,36 @@ Block device           <span class="token number">253</span>:0
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
 <p><strong>注意：</strong> 不要卸载扩容的磁盘，可能出现丢失数据或是系统无法启动</p>
 </blockquote>
+<h2 id="将硬盘挂载到指定的文件夹" tabindex="-1"><a class="header-anchor" href="#将硬盘挂载到指定的文件夹" aria-hidden="true">#</a> 将硬盘挂载到指定的文件夹</h2>
+<h3 id="格式化新硬盘" tabindex="-1"><a class="header-anchor" href="#格式化新硬盘" aria-hidden="true">#</a> 格式化新硬盘</h3>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> mkfs.ext4 /dev/sdb1
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><blockquote>
+<p>如果硬盘已经格式化，可以跳过此步骤</p>
+</blockquote>
+<h3 id="创建挂载点" tabindex="-1"><a class="header-anchor" href="#创建挂载点" aria-hidden="true">#</a> 创建挂载点</h3>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /mnt/mydata
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="挂载硬盘到文件夹" tabindex="-1"><a class="header-anchor" href="#挂载硬盘到文件夹" aria-hidden="true">#</a> 挂载硬盘到文件夹</h3>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">mount</span> /dev/sdb1 /mnt/mydata
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="验证挂载是否成功" tabindex="-1"><a class="header-anchor" href="#验证挂载是否成功" aria-hidden="true">#</a> 验证挂载是否成功</h3>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">df</span> <span class="token parameter variable">-h</span> <span class="token operator">|</span> <span class="token function">grep</span> /mnt/mydata
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="输出如下" tabindex="-1"><a class="header-anchor" href="#输出如下" aria-hidden="true">#</a> 输出如下</h3>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code>/dev/sdb1       <span class="token number">1</span>.0T  <span class="token number">0</span>.0T  <span class="token number">1</span>.0T   <span class="token number">0</span>% /mnt/mydata
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="设置开机自动挂载" tabindex="-1"><a class="header-anchor" href="#设置开机自动挂载" aria-hidden="true">#</a> 设置开机自动挂载</h3>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">vim</span> /etc/fstab
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="在文件末尾添加以下内容" tabindex="-1"><a class="header-anchor" href="#在文件末尾添加以下内容" aria-hidden="true">#</a> 在文件末尾添加以下内容</h3>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code>/dev/sdb1  /mnt/mydata  ext4  defaults  <span class="token number">0</span>  <span class="token number">2</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="卸载挂载" tabindex="-1"><a class="header-anchor" href="#卸载挂载" aria-hidden="true">#</a> 卸载挂载</h3>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">umount</span> /home/mes/data/data/file/xingneng4
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="强制卸载" tabindex="-1"><a class="header-anchor" href="#强制卸载" aria-hidden="true">#</a> 强制卸载</h3>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">fuser</span> <span class="token parameter variable">-m</span> /home/mes/data/data/file/xingneng4
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="查看挂载点" tabindex="-1"><a class="header-anchor" href="#查看挂载点" aria-hidden="true">#</a> 查看挂载点</h3>
+<div class="language-bash line-numbers-mode" data-ext="sh"><pre v-pre class="language-bash"><code><span class="token function">df</span> <span class="token parameter variable">-h</span> <span class="token operator">|</span> <span class="token function">grep</span> xingneng4
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>/dev/sdb1：硬盘分区。</p>
+<p>/mnt/mydata：挂载点。</p>
+<p>ext4：文件系统类型。</p>
+<p>defaults：挂载选项。</p>
+<p>0：是否备份（0 表示不备份）。</p>
+<p>2：文件系统检查顺序（0 表示不检查，2 表示非根文件系统）</p>
 </div></template>
 
 
