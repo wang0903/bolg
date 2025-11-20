@@ -142,6 +142,11 @@ export default navbar([
             icon: "pen-to-square",
             link: "5",
           },
+          {
+            text: "RKE2安装K8S集群",
+            icon: "pen-to-square",
+            link: "6",
+          },
         ],
       },
     ],
@@ -230,6 +235,11 @@ export default navbar([
             text: "前端默认时间查询,后端默认时间导出",
             icon: "pen-to-square",
             link: "15",
+          },
+          {
+            text: "安装部署MQ",
+            icon: "pen-to-square",
+            link: "16",
           },
         ],
       },
