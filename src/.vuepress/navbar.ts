@@ -147,6 +147,11 @@ export default navbar([
             icon: "pen-to-square",
             link: "6",
           },
+          {
+            text: "高可用K8S集群原理",
+            icon: "pen-to-square",
+            link: "7",
+          },
         ],
       },
     ],
