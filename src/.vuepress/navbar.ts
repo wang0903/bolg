@@ -152,6 +152,11 @@ export default navbar([
             icon: "pen-to-square",
             link: "7",
           },
+          {
+            text: "Sealos安装HA Kubernetes集群",
+            icon: "pen-to-square",
+            link: "8",
+          },
         ],
       },
     ],
