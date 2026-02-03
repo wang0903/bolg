@@ -251,6 +251,11 @@ export default navbar([
             icon: "pen-to-square",
             link: "16",
           },
+          {
+            text: "安装Kafka、ClickHouse、Grafana、Canal组合",
+            icon: "pen-to-square",
+            link: "17",
+          },
         ],
       },
     ],
