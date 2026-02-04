@@ -110,6 +110,11 @@ export default navbar([
             icon: "pen-to-square",
             link: "11",
           },
+          {
+            text: "Databasus MySQL备份工具使用",
+            icon: "pen-to-square",
+            link: "12",
+          },
         ],
       },
       {
