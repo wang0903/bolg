@@ -261,6 +261,11 @@ export default navbar([
             icon: "pen-to-square",
             link: "17",
           },
+          {
+            text: "自动删除mes日志",
+            icon: "pen-to-square",
+            link: "18",
+          },
         ],
       },
     ],
