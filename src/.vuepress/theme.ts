@@ -8,7 +8,7 @@ export default hopeTheme({
 
   author: {
     name: "小辣椒",
-    url: "https://mister-hope.com",
+    url: "https://wangbg.netlify.app/",
   },
 
   iconAssets: "fontawesome-with-brands",
