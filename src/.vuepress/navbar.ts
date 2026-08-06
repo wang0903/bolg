@@ -162,6 +162,11 @@ export default navbar([
             icon: "pen-to-square",
             link: "8",
           },
+          {
+            text: "Sealos新加工作节点",
+            icon: "pen-to-square",
+            link: "9",
+          },
         ],
       },
     ],
