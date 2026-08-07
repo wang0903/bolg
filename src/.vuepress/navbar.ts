@@ -48,6 +48,11 @@ export default navbar([
             icon: "pen-to-square",
             link: "7",
           },
+          {
+            text: "Ubuntu 24.04.3服务器登录卡顿",
+            icon: "pen-to-square",
+            link: "8",
+          },
         ],
       },
       {
