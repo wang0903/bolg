@@ -276,6 +276,11 @@ export default navbar([
             icon: "pen-to-square",
             link: "18",
           },
+          {
+            text: "skywalking接口链路",
+            icon: "pen-to-square",
+            link: "19",
+          },
         ],
       },
     ],
