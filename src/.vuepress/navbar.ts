@@ -120,6 +120,11 @@ export default navbar([
             icon: "pen-to-square",
             link: "12",
           },
+          {
+            text: "nginx技术使用sni",
+            icon: "pen-to-square",
+            link: "13",
+          },
         ],
       },
       {
