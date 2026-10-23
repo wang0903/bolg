@@ -128,7 +128,7 @@ export default navbar([
           {
             text: "rustfs高可用部署",
             icon: "pen-to-square",
-            link: "13",
+            link: "14",
           },
         ],
       },
